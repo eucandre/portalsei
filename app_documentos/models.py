@@ -28,7 +28,6 @@ class Cliente(models.Model):
 	cargo = models.CharField(max_length=150)
 	setor_locacao = models.ForeignKey(Setor)
 
-
 class Documentos(models.Model):
 	"""
 	Registro dos documentos que estarão distoníveis no portal.
