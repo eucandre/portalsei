@@ -35,7 +35,8 @@ header {
 }
 
 header #topo {
-	background: url(css-images/fundo-topo.png);
+	/*background: url(css-images/fundo-topo.png);*/
+	background-color: #0080FF;
 	height: 65px;
 }
 
@@ -504,7 +505,7 @@ footer {
 	height: 300px;
 	margin-top: -300px;
 	min-width: 990px;
-	background: #a2121f;
+	background: #0080FF;
 }
 
 footer #footer-conteudo {
@@ -543,7 +544,7 @@ footer *, footer a:hover {
 }
 
 footer ul.footer-menu {
-	border-left: 1px solid #c52a3c;
+	border-left: 1px solid #eeeeee;
 	padding-left: 15px;
 }
 
