@@ -36,7 +36,8 @@ header {
 }
 
 header #topo {
-	background: url(css-images/fundo-topo.png);
+	/*background: url(css-images/fundo-topo.png);*/
+	background-color: #338bd0;
 	height: 65px;
 }
 
@@ -111,7 +112,7 @@ header #menus-mobile * {
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none; 	/* Firefox all */
 	-ms-user-select: none;	  /* IE 10+ */
-	user-select: none;		  /* Likely future */	  
+	user-select: none;		  /* Likely future */
 }
 
 header #menu-mobile, header #busca-mobile {
@@ -453,7 +454,7 @@ main .paginacao ul li a, main .paginacao ul li span {
 }
 
 main .paginacao .paginacao-tras {
-	text-align: right;	
+	text-align: right;
 }
 
 main .paginacao .paginacao-tras a, main .paginacao .paginacao-frente a {
@@ -505,7 +506,7 @@ footer {
 	height: 300px;
 	margin-top: -300px;
 	min-width: 990px;
-	background: #a2121f;
+	background: #338bd0;
 }
 
 footer #footer-conteudo {
@@ -544,7 +545,7 @@ footer *, footer a:hover {
 }
 
 footer ul.footer-menu {
-	border-left: 1px solid #c52a3c;
+	border-left: 1px solid #EFFBF2;
 	padding-left: 15px;
 }
 
@@ -815,7 +816,7 @@ header #menus-mobile * {
 	-webkit-user-select: none;  /* Chrome all / Safari all */
 	-moz-user-select: none; 	/* Firefox all */
 	-ms-user-select: none;	  /* IE 10+ */
-	user-select: none;		  /* Likely future */	  
+	user-select: none;		  /* Likely future */
 }
 
 header #menu-mobile, header #busca-mobile {
@@ -1157,7 +1158,7 @@ main .paginacao ul li a, main .paginacao ul li span {
 }
 
 main .paginacao .paginacao-tras {
-	text-align: right;	
+	text-align: right;
 }
 
 main .paginacao .paginacao-tras a, main .paginacao .paginacao-frente a {
