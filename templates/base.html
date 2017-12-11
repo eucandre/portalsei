@@ -1,0 +1,521 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Agência Alagoas - Governo do Estado de Alagoas</title>
+
+<link rel="stylesheet" type="text/css" href="css/base.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/elementos.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/site-base.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/responsividade.css" media="all">
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.slides.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#menu-mobile").click(function() {
+		$( "#busca" ).hide();
+		$( "#envolve-menus" ).toggle();
+	});
+
+	$("#busca-mobile").click(function() {
+		$("#envolve-menus").hide();
+		$( "#busca" ).toggle();
+	});
+});
+
+$(function() {
+	$("#noticias-rotativas").slidesjs({
+		height: 708,
+		navigation: {active: false},
+		play: {effect: "slide", interval: 5000, auto: true, pauseOnHover: true},
+		effect: {slide: {speed: 1000}}
+	});
+
+	$("#mais-noticias").slidesjs({
+		height: 215,
+		play: {effect: "slide"},
+		effect: {slide: {speed: 1000}},
+		pagination: {active: false}
+	});
+
+	$("#banner-capa").slidesjs({
+		height: 100,
+		navigation: {active: false},
+		play: {effect: "slide", interval: 5000, auto: true, pauseOnHover: true},
+		effect: {slide: {speed: 1000}},
+		pagination: {active: true}
+	});
+
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=465486936800543";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="global">
+	<header>
+		<div id="topo">
+			<div id="topo-conteudo" class="row row-no-bottom">
+				<div id="envolve-logo" class="col-3">
+					<a id="logo" href="#">Agência Alagoas</a>
+				</div>
+				<div id="envolve-titulo-site" class="col-6">
+					<div id="titulo-site">
+						<h2>Agência Alagoas</h2>
+						<h5>Governo do Estado de Alagoas</h5>
+					</div>
+				</div>
+				<div id="envolve-busca" class="col-3">
+					<div id="menus-mobile" class="row">
+						<a id="menu-mobile"></a>
+						<a id="busca-mobile"></a>
+					</div>
+					<div id="busca">
+						<form name="form1" method="post" action="">
+							<input id="botao-buscar" name="textfield" type="submit" class="form-control" value="">
+							<input id="buscar" name="textfield" type="text" class="form-control" placeholder="Buscar">
+						</form>
+				  	</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="envolve-menus" class="row">
+			<nav class="row row-no-bottom">
+				<div class="col-12">
+					<div id="nav-superior" class="col-12 col-no-left-right">
+
+						<div id="menu-superior" class="col-10 col-no-left">
+							<ul>
+								<li><a href="#">Início</a></li>
+								<li><a href="#">Institucional</a></li>
+								<li><a href="#">Agenda</a></li>
+								<li><a href="#">Fotos</a></li>
+								<li><a href="#">Vídeos</a></li>
+								<li><a href="#">Áudios</a></li>
+								<li><a href="#">Contato</a></li>
+								<li><a href="#">Acesso à Informação</a></li>
+							</ul>
+						</div>
+						<div id="menu-redes-sociais" class="col-2 col-no-right">
+							<ul>
+								<li><a id="social-youtube" href="#">Youtube</a></li>
+								<li><a id="social-twitter" href="#">Twitter</a></li>
+								<li><a id="social-facebook" href="#">Facebook</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</nav>
+
+			<nav class="row row-no-bottom">
+				<div id="menu-inferior" class="col-12">
+					<ul>
+						<li id="menu-item-noticias" class="dropmenu dropmenu-bg">
+							<a href="#">Notícias<div class="seta-baixo"></div></a>
+							<ul class="submenu">
+								<li><a href="#">Ação Social</a></li>
+								<li><a href="#">Cultura</a></li>
+								<li><a href="#">Economia</a></li>
+								<li><a href="#">Educação</a></li>
+								<li><a href="#">Emprego</a></li>
+								<li><a href="#">Esporte e Lazer</a></li>
+								<li><a href="#">Infraestrutura</a></li>
+								<li><a href="#">Inovação</a></li>
+								<li><a href="#">Justiça</a></li>
+								<li><a href="#">Meio Ambiente</a></li>
+								<li><a href="#">Saúde</a></li>
+								<li><a href="#">Segurança</a></li>
+								<li><a href="#">Serviços</a></li>
+								<li><a href="#">Turismo</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Secretarias</a></li>
+						<li><a href="#">Assessorias</a></li>
+						<li><a href="#">Diário Oficial</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+
+		<div class="row">
+			<div class="col-6">
+
+				<div id="manchete" class="row">
+					<div class="col-12 col-no-left-right">
+						<h1>
+							<a href="#">Recursos do Fecoep garantem fortalecimento de programas</a>
+						</h1>
+						<p>Encontro do conselho gestor, nesta terça, garantiu a aprovação de cerca de R$ 9,3 milhões para assistência social, empreendedorismo, agricultura e trabalho</p>
+					</div>
+				</div>
+
+				<div id="destaques-topo" class="row row-no-bottom">
+					<div id="destaques-topo-videos" class="col-6 col-no-left">
+						<a class="link-imagem" href="#">
+							<img src="imagens/imagem-capa.jpg" />
+						</a>
+						<h6 class="lead-sm">Vídeo</h6>
+						<h4>
+							<a class="link-videos" href="#">Fecoep aprova liberação de R$ 21,6 milhões para programas</a>
+						</h4>
+					</div>
+					<div id="destaques-topo-fotos" class="col-6 col-no-right">
+						<a class="link-imagem" href="#">
+							<img src="imagens/imagem-capa.jpg" />
+						</a>
+						<h6 class="lead-sm">Fotos</h6>
+						<h4>
+							<a class="link-fotos" href="#">Desenvolvimento Econômico e Turismo implantam gestão da qualidade</a>
+						</h4>
+					</div>
+				</div>
+
+			</div>
+			<div id="noticias-rotativas-conteiner" class="col-6">
+				<div id="noticias-rotativas">
+					<div>
+						<div class="imagens-rotativas">
+							<a href="#" class="imagem-rotativa"><img src="imagens/noticias-rotativa.jpg" /></a>
+						</div>
+						<div id="links-rotativos">
+							<a href="#"><h2>Governador Renan Filho nomeia novo procurador-geral do MP de Contas1 nomeia novo procu2rador-geral do MP de Con3</h2></a>
+						</div>
+					</div>
+					<div>
+						<div class="imagens-rotativas">
+							<a href="#" class="imagem-rotativa"><img src="imagens/noticias-rotativa.jpg" /></a>
+						</div>
+						<div id="links-rotativos">
+							<a href="#"><h2>2 Governador Renan Filho nomeia novo procurador-geral do MP de Contas</h2></a>
+						</div>
+					</div>
+					<div>
+						<div class="imagens-rotativas">
+							<a href="#" class="imagem-rotativa"><img src="imagens/noticias-rotativa.jpg" /></a>
+						</div>
+						<div id="links-rotativos">
+							<a href="#"><h2>3 Governador Renan Filho nomeia novo procurador-geral do MP de Contas</h2></a>
+						</div>
+					</div>
+					<div>
+						<div class="imagens-rotativas">
+							<a href="#" class="imagem-rotativa"><img src="imagens/noticias-rotativa.jpg" /></a>
+						</div>
+						<div id="links-rotativos">
+							<a href="#"><h2>4 Governador Renan Filho nomeia novo procurador-geral do MP de Contas</h2></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mais-noticias-conteiner" class="row">
+			<div class="col-12">
+				<h2 class="titulo"><a class="link-no-underline" href="#">Mais Notícias</a></h2>
+			</div>
+			<div class="col-12">
+				<div id="mais-noticias" class="col-12 col-no-left-right">
+					<ul class="list-no-style">
+						<li>
+							<div class="col-3">
+								<a class="link-imagem" href="#">
+									<img src="imagens/imagem-capa.jpg" />
+								</a>
+								<h6 class="lead-sm">Casas</h6>
+								<h4>
+									<a href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitagcionais</a>
+								</h4>
+							</div>
+						</li>
+						<li>
+							<div class="col-3">
+								<a class="link-imagem" href="#">
+									<img src="imagens/imagem-capa.jpg" />
+								</a>
+								<h6 class="lead-sm">Casas</h6>
+								<h4>
+									<a href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</li>
+						<li>
+							<div class="col-3">
+								<a class="link-imagem" href="#">
+									<img src="imagens/imagem-capa.jpg" />
+								</a>
+								<h6 class="lead-sm">Casas</h6>
+								<h4>
+									<a href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</li>
+						<li>
+							<div class="col-3">
+								<a class="link-imagem" href="#">
+									<img src="imagens/imagem-capa.jpg" />
+								</a>
+								<h6 class="lead-sm">Casas</h6>
+								<h4>
+									<a href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</li>
+					</ul>
+					<ul class="list-no-style">
+						<li>
+							<div class="col-3">
+								<a class="link-imagem" href="#">
+									<img src="imagens/imagem-capa.jpg" />
+								</a>
+								<h6 class="lead-sm">Casas</h6>
+								<h4>
+									<a href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</li>
+						<li>
+							<div class="col-3">
+								<a class="link-imagem" href="#">
+									<img src="imagens/imagem-capa.jpg" />
+								</a>
+								<h6 class="lead-sm">Casas</h6>
+								<h4>
+									<a href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</li>
+						<li>
+							<div class="col-3">
+								<a class="link-imagem" href="#">
+									<img src="imagens/imagem-capa.jpg" />
+								</a>
+								<h6 class="lead-sm">Casas</h6>
+								<h4>
+									<a href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</li>
+						<li>
+							<div class="col-3">
+								<a class="link-imagem" href="#">
+									<img src="imagens/imagem-capa.jpg" />
+								</a>
+								<h6 class="lead-sm">Casas</h6>
+								<h4>
+									<a href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-12 ver-mais">
+				<a class="destaque" href="#">Mais Notícias</a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="banner-capa">
+				<a href="#"><img src="banner/banner1.jpg" /></a>
+				<a href="#"><img src="banner/banner2.jpg" /></a>
+				<a href="#"><img src="banner/banner3.jpg" /></a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="capa-videos" class="col-6">
+				<h2 class="titulo"><a class="link-no-underline-videos link-videos" href="#">Vídeos</a></h2>
+				<ul class="list-no-style">
+					<li>
+						<div class="row row-sm">
+							<div class="col-6 col-no-left">
+								<a class="link-imagem" href="#"><img src="imagens/imagem-capa.jpg" /></a>
+							</div>
+							<div class="col-6 col-no-left-right">
+								<h2>
+									<a class="link-videos" href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h2>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row row-sm">
+							<div class="col-4 col-no-left">
+								<a class="link-imagem" href="#"><img src="imagens/imagem-capa.jpg" /></a>
+							</div>
+							<div class="col-8 col-no-left-right">
+								<h4>
+									<a class="link-videos" href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row row-sm">
+							<div class="col-4 col-no-left">
+								<a class="link-imagem" href="#"><img src="imagens/imagem-capa.jpg" /></a>
+							</div>
+							<div class="col-8 col-no-left-right">
+								<h4>
+									<a class="link-videos" href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="col-12 ver-mais">
+					<a class="destaque link-videos" href="#">Mais Vídeos</a>
+				</div>
+			</div>
+			<div id="capa-fotos" class="col-6">
+				<h2 class="titulo"><a class="link-no-underline-fotos link-fotos" href="#">Fotos</a></h2>
+				<ul class="list-no-style">
+					<li>
+						<div class="row row-sm">
+							<div class="col-6 col-no-left">
+								<a class="link-imagem" href="#"><img src="imagens/imagem-capa.jpg" /></a>
+							</div>
+							<div class="col-6 col-no-left-right">
+								<h2>
+									<a class="link-fotos" href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h2>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row row-sm">
+							<div class="col-4 col-no-left">
+								<a class="link-imagem" href="#"><img src="imagens/imagem-capa.jpg" /></a>
+							</div>
+							<div class="col-8 col-no-left-right">
+								<h4>
+									<a class="link-fotos" href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row row-sm">
+							<div class="col-4 col-no-left">
+								<a class="link-imagem" href="#"><img src="imagens/imagem-capa.jpg" /></a>
+							</div>
+							<div class="col-8 col-no-left-right">
+								<h4>
+									<a class="link-fotos" href="#">Governo do Estado anuncia a entrega de 219 novas unidades habitacionais</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="col-12 ver-mais">
+					<a class="destaque link-fotos" href="#">Mais Fotos</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="twitter-capa" class="col-4">
+				<h3 class="titulo"><a class="link-no-underline-twitter link-twitter" href="#">Twitter</a></h3>
+				<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/GovernoAlagoas" data-widget-id="606176818564079616">Tweets de @GovernoAlagoas</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
+			<div id="facebook-capa" class="col-4">
+				<h3 class="titulo"><a class="link-no-underline-facebook link-facebook" href="#">Facebook</a></h3>
+				<div class="fb-page" data-href="https://www.facebook.com/pages/Governo-de-Alagoas/432117366821724" data-height="310" data-hide-cover="false" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Governo-de-Alagoas/432117366821724"><a href="https://www.facebook.com/pages/Governo-de-Alagoas/432117366821724">Governo de Alagoas</a></blockquote></div></div>
+			</div>
+			<div id="assessor-capa" class="col-4">
+				<h3 class="titulo"><a class="link-no-underline-assessor link-assessor" href="#">Assessor da Semana</a></h3>
+				<a id="assessor-capa-link" href="#"><img src="imagens/assessor-capa.jpg" /></a>
+				<h3 id="assessor-capa-nome" class="destaque">Maria dos Santos</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis lorem libero, quis lacinia ante lacinia pellentesque. Nulla aliquet tincidunt sapien.</p>
+			</div>
+		</div>
+
+		<div id="audios-conteiner" class="row">
+			<div class="col-12">
+				<h2 class="titulo"><a class="link-no-underline-audios link-audios" href="#">Áudios</a></h2>
+				<ul id="audios" class="list-no-style">
+					<li><h3><a class="link-audios" href="#">Fecoep mantém apoio a bolsa universitária e ao Restaurante Popular</a></h3></li>
+					<li><h3><a class="link-audios" href="#">Fecoep mantém apoio a bolsa universitária e ao Restaurante Popular</a></h3></li>
+					<li><h3><a class="link-audios" href="#">Fecoep mantém apoio a bolsa universitária e ao Restaurante Popular</a></h3></li>
+					<li><h3><a class="link-audios" href="#">Fecoep mantém apoio a bolsa universitária e ao Restaurante Popular</a></h3></li>
+				</ul>
+				<div class="col-12 ver-mais">
+					<a class="destaque link-audios" href="#">Mais Audios</a>
+				</div>
+			</div>
+		</div>
+
+	</main>
+</div>
+
+<footer>
+	<div id="footer-conteudo">
+		<div class="row">
+			<div id="footer-info" class="col-6">
+				<a id="footer-logo" href="#">
+					<h3>Agência Alagoas</h3><br />
+					<h5>Governo do Estado de Alagoas</h5>
+				</a>
+				<div id="telefone">
+					<h3>(82) 3315.3615 | (82) 3315.3620</h3>
+				</div>
+				<address>
+					Rua Cincinato Pinto, 193<br />
+					Centro<br />
+					Maceió-Alagoas
+				</address>
+			</div>
+			<div class="col-3">
+				<ul class="footer-menu">
+					<li><a href="#">Início</a></li>
+					<li><a href="#">Institucional</a></li>
+					<li><a href="#">Fotos</a></li>
+					<li><a href="#">Vídeos</a></li>
+					<li><a href="#">Áudios</a></li>
+					<li><a href="#">Arquivos</a></li>
+					<li><a href="#">Contato</a></li>
+					<li><a href="#">Acesso à Informação</a></li>
+				</ul>
+			</div>
+			<div class="col-3">
+				<ul class="footer-menu">
+					<li><a href="#">Notícias</a></li>
+					<li><a href="#">Secretarias</a></li>
+					<li><a href="#">Assessoria</a></li>
+					<li><a href="#">Notas</a></li>
+					<li><a href="#">Diário Oficial</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<div id="assinatura">
+	<div id="assinatura-conteudo" class="row row-no-bottom">
+		<div class="col-12">
+			<span id="copyright">Governo do Estado de Alagoas © - 2015</span>
+			<a id="itec-footer" href="http://www.itec.al.gov.br"></a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

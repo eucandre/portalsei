@@ -1,0 +1,289 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Fontes */
+@import url("fonts.css");
+
+/* Select */
+@import url("chosen.min.css");
+
+/* Geral */
+*, *:hover, *:focus, *:active, *:link, *:visited {
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+
+p {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: #005da6;
+}
+
+a.link-videos {
+	color: #2b890b;
+}
+
+a.link-fotos {
+	color: #a40000;
+}
+
+a.link-audios {
+	color: #22aeb0;
+}
+
+a.link-imagem {
+	display: block;
+	width: 100%;
+}
+
+a.link-imagem img {
+	width: 100%;
+}
+
+a.link-no-underline:hover, a.link-no-underline-videos:hover, a.link-no-underline-fotos:hover, a.link-no-underline-audios:hover {
+	text-decoration: none;
+}
+
+a.link-no-underline:hover {
+	color: #0075d0;
+}
+
+a.link-no-underline-videos:hover {
+	color: #39ae11;
+}
+
+a.link-no-underline-fotos:hover {
+	color: #d00000;
+}
+
+a.link-no-underline-audios:hover {
+	color: #2ccacc;
+}
+
+ul {
+	padding: 0 0 0 20px;
+}
+
+li {
+	list-style-type: square;
+}
+
+.list-no-style {
+	padding: 0;
+}
+
+.list-no-style li {
+	list-style-type: none;
+}
+
+b, strong {
+	font-family: 'open_sansbold';
+}
+
+.destaque {
+	font-family: 'open_sansbold';
+}
+
+/* Linhas e Colunas */
+.row:before,
+.row:after {
+	content: " ";
+	display: table;
+}
+
+.row:after {
+	clear: both;
+}
+
+.row {
+	margin-bottom: 50px;
+}
+
+.row-sm {
+	margin-bottom: 20px;
+}
+
+.row-no-bottom {
+	margin-bottom: 0;
+}
+
+.col-12 {width:100%}
+.col-11 {width:91.66666667%}
+.col-10 {width:83.33333333%}
+.col-9 {width:75%}
+.col-8 {width:66.66666667%}
+.col-7 {width:58.33333333%}
+.col-6 {width:50%}
+.col-5 {width:41.66666667%}
+.col-4 {width:33.33333333%}
+.col-3 {width:25%}
+.col-2 {width:16.66666667%}
+.col-1 {width:8.33333333%}
+
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
+	float: left;
+	padding: 0 15px;
+}
+
+.col-no-left-right {
+	padding: 0;
+}
+
+.col-no-left {
+	padding: 0 15px 0 0;
+}
+
+.col-no-right {
+	padding: 0 0 0 15px;
+}
+
+.col-no-bottom {
+	margin-bottom: 0;
+}
+
+/* Titulos */
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+}
+
+h1 {
+	font-size: 31px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	font-size: 12px;
+}
+
+.titulo {
+	text-transform: uppercase;
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 5px;
+}
+
+.titulo-inline {
+	display: inline-block;
+}
+
+.titulo-muted {
+	color: #666;
+}
+
+.titulo-bold {
+	font-family: 'open_sanssemibold';
+}
+
+/* Botões */
+.btn {
+	border: 0;
+	border-radius: 0;
+}
+
+.btn-section {
+	padding: 15px;
+	width: 100%;
+	text-align: left;
+}
+
+.btn-md {
+	font-size: 16px;
+	font-family: 'open_sansbold';
+}
+
+.btn-bg {
+	font-size: 20px;
+	font-family: 'open_sansbold';
+}
+
+.btn-default {
+	color: #005da6;
+	background: #e6e6e6;
+}
+
+.btn-default:hover {
+	color: #005da6;
+	background: #eee;
+}
+
+/* Formulários */
+.form-control {
+	height: 30px;
+	border: 0;
+	border-radius: 0;
+}
+
+/* Setas */
+.seta-baixo {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #005da6;
+	display: inline;
+}
+
+/* Chosen */
+.chosen-container {
+	width: 100% !important;
+	font-size: 14px;
+}
+
+.chosen-container .chosen-single {
+	border: 0 !important;
+	border-radius: 0 !important;
+	background: #e6e6e6 !important;
+	padding: 5px 8px;
+	height: auto !important;
+}
+
+.chosen-container .chosen-single div b {
+	background: url(css-images/chosen-sprite.png) no-repeat 0 9px;
+}
+
+.chosen-container.chosen-with-drop .chosen-single div b {
+	background-position: -18px 9px;
+}
+
+.chosen-container .chosen-drop {
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	background: #f1f1f1;
+	height: 245px;
+}
+
+.chosen-container .chosen-results {
+	padding: 0;
+	margin: 0;
+	max-height: 245px !important;
+	display: block;
+}
+
+.chosen-container .chosen-results li.active-result {
+	margin-bottom: 0 !important;
+	padding: 10px 8px;
+}
+
+.chosen-container .chosen-results li.active-result.highlighted {
+	background: #0075d0;
+	color: #fff;
+}
