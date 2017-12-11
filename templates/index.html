@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
@@ -519,3 +520,219 @@ $(function() {
 
 </body>
 </html>
+=======
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Agência Alagoas - Governo do Estado de Alagoas</title>
+
+<link rel="stylesheet" type="text/css" href="/media/css/base.css" media="all">
+<link rel="stylesheet" type="text/css" href="/media/css/elementos.css" media="all">
+<link rel="stylesheet" type="text/css" href="/media/css/site-base.css" media="all">
+<link rel="stylesheet" type="text/css" href="/media/css/responsividade.css" media="all">
+
+<script src="/media/js/jquery-1.11.3.min.js"></script>
+<script src="/media/js/jquery.slides.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#menu-mobile").click(function() {
+		$( "#busca" ).hide();
+		$( "#envolve-menus" ).toggle();
+	});
+	
+	$("#busca-mobile").click(function() {
+		$("#envolve-menus").hide();
+		$( "#busca" ).toggle();
+	});
+});
+
+$(function() {
+	$("#noticias-rotativas").slidesjs({
+		height: 708,
+		navigation: {active: false},
+		play: {effect: "slide", interval: 5000, auto: true, pauseOnHover: true},
+		effect: {slide: {speed: 1000}}
+	});
+	
+	$("#mais-noticias").slidesjs({
+		height: 215,
+		play: {effect: "slide"},
+		effect: {slide: {speed: 1000}},
+		pagination: {active: false}
+	});
+	
+	$("#banner-capa").slidesjs({
+		height: 100,
+		navigation: {active: false},
+		play: {effect: "slide", interval: 5000, auto: true, pauseOnHover: true},
+		effect: {slide: {speed: 1000}},
+		pagination: {active: true}
+	});
+
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=465486936800543";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="global">
+	<header>
+		<div id="topo">
+			<div id="topo-conteudo" class="row row-no-bottom">
+				<div id="envolve-logo" class="col-3">
+					<a id="logo" href="#">Agência Alagoas</a>
+				</div>
+				<div id="envolve-titulo-site" class="col-6">
+					<div id="titulo-site">
+						<h2>Agência Alagoas</h2>
+						<h5>Governo do Estado de Alagoas</h5>
+					</div>
+				</div>
+				<div id="envolve-busca" class="col-3">
+					<div id="menus-mobile" class="row">
+						<a id="menu-mobile"></a>
+						<a id="busca-mobile"></a>
+					</div>
+					<div id="busca">
+						<form name="form1" method="post" action="">
+							<input id="botao-buscar" name="textfield" type="submit" class="form-control" value="">
+							<input id="buscar" name="textfield" type="text" class="form-control" placeholder="Buscar">
+						</form>
+				  	</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="envolve-menus" class="row">
+			<nav class="row row-no-bottom">
+				<div class="col-12">
+					<div id="nav-superior" class="col-12 col-no-left-right">
+	
+						<div id="menu-superior" class="col-10 col-no-left">
+							<ul>
+								<li><a href="#">Início</a></li>
+								<li><a href="#">Institucional</a></li>
+								<li><a href="#">Legislação</a></li>
+								<li><a href="#">Acesso à Informação</a></li>
+								<li><a href="#">Conselhos e Fóruns</a></li>
+								<li><a href="#">Newsletter</a></li>
+								
+							</ul>
+						</div>
+						<div id="menu-redes-sociais" class="col-2 col-no-right">
+							<ul>
+								<li><a id="social-youtube" href="#">Youtube</a></li>
+								<li><a id="social-twitter" href="#">Twitter</a></li>
+								<li><a id="social-facebook" href="#">Facebook</a></li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</nav>
+			
+			<nav class="row row-no-bottom">
+				<div id="menu-inferior" class="col-12">
+					<ul>
+						<!-- <li id="menu-item-noticias" class="dropmenu dropmenu-bg">
+							<a href="#">Acesso ao SEI!<div class="seta-baixo"></div></a>
+							<ul class="submenu">
+								<li><a href="#">Ação Social</a></li>
+								<li><a href="#">Cultura</a></li>
+								<li><a href="#">Economia</a></li>
+								<li><a href="#">Educação</a></li>
+								<li><a href="#">Emprego</a></li>
+								<li><a href="#">Esporte e Lazer</a></li>
+								<li><a href="#">Infraestrutura</a></li>
+								<li><a href="#">Inovação</a></li>
+								<li><a href="#">Justiça</a></li>
+								<li><a href="#">Meio Ambiente</a></li>
+								<li><a href="#">Saúde</a></li>
+								<li><a href="#">Segurança</a></li>
+								<li><a href="#">Serviços</a></li>
+								<li><a href="#">Turismo</a></li>
+							</ul>
+						</li> -->
+						<li><a href="#">Acesso ao SEI!</a></li>
+						<li><a href="#">Sobre</a></li>
+						<li><a href="#">Documentos</a></li>
+						<li><a href="#">Notícias</a></li>
+						<li><a href="#">Treinamentos</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<div class="class-title">
+		<h2>Fique sabendo!</h2>
+	</div>
+	<!-- <main>
+		dc
+
+	</main> -->
+</div>
+
+<footer>
+	<div id="footer-conteudo">
+		<div class="row">
+			<div id="footer-info" class="col-6">
+				<a id="footer-logo" href="#">
+					<h3>Agência Alagoas</h3><br />
+					<h5>Governo do Estado de Alagoas</h5>
+				</a>
+				<div id="telefone">
+					<h3>(82) 3315.3615 | (82) 3315.3620</h3>
+				</div>
+				<address>
+					Rua Cincinato Pinto, 193<br />
+					Centro<br />
+					Maceió-Alagoas
+				</address>
+			</div>
+			<div class="col-3">
+				<ul class="footer-menu">
+					<li><a href="#">Início</a></li>
+						<li><a href="#">Institucional</a></li>
+						<li><a href="#">Legislação</a></li>
+						<li><a href="#">Acesso à Informação</a></li>
+						<li><a href="#">Conselhos e Fóruns</a></li>
+						<li><a href="#">Newsletter</a></li>
+				</ul>
+			</div>
+			<div class="col-3">
+				<ul class="footer-menu">
+					<li><a href="#">Notícias</a></li>
+					<li><a href="#">Serviços</a></li>
+					<li><a href="#">Órgãos vinculados</a></li>
+					<li><a href="#">Mês do Servidor 2016</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<div id="assinatura">
+	<div id="assinatura-conteudo" class="row row-no-bottom">
+		<div class="col-12">
+			<span id="copyright">Governo do Estado de Alagoas © - 2015</span>
+			<a id="itec-footer" href="http://www.itec.al.gov.br"></a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+>>>>>>> a25c7ab5613c9cb7ce96459f1318abbd9437e8d2
