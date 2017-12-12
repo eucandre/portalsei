@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @charset "utf-8";
 /* CSS Document */
 
@@ -29,6 +28,14 @@ body {
 	text-align: right;
 }
 
+#conteudos {
+	width: 100%;
+	min-height: 100%;
+	background-color: #338bd0;
+	min-width: 990px;
+	padding-bottom: 300px;
+}
+
 /* Superior */
 header {
 	margin-bottom: 30px;
@@ -44,7 +51,7 @@ header #topo {
 header #logo {
 	width: 196px;
 	height: 30px;
-	background: url(css-images/logo.png) no-repeat;
+	background: url(css-images/logo1.png) no-repeat;
 	float: left;
 	margin-top: 18px;
 	text-indent: -9999px;
@@ -497,6 +504,24 @@ main #lateral ul li .link-imagem {
 
 main #lateral .ver-mais {
 	margin-bottom: 35px;
+}
+
+
+conteudo {
+	position: relative;
+	bottom: 0;
+	height: 300px;
+	margin-top: -300px;
+	min-width: 990px;
+	background: #8181F7;
+
+}
+
+conteudo #portal-conteudo {
+	width: 990px;
+	margin: auto;
+	padding-top: 25px;
+	color: #8181F7;
 }
 
 /* Rodape */
