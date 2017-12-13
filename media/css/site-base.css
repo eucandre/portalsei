@@ -49,11 +49,11 @@ header #topo {
 }
 
 header #logo {
-	width: 196px;
-	height: 30px;
-	background: url(css-images/logo1.png) no-repeat;
+	width: 320px;
+	height: 67px;
+	background: url(css-images/logo_decolor1000.png) no-repeat;
 	float: left;
-	margin-top: 18px;
+	margin-top: -8px;
 	text-indent: -9999px;
 	display: inline-block;
 }
