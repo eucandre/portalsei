@@ -12,7 +12,7 @@ class Setor(models.Model):
 	nome = models.CharField(max_length = 150)
 
 	class Meta:
-		verbose_name_plural = "Setor da Secretaria ou de Órgão"
+		verbose_name_plural = "Setor da Secretaria ou de Órgão."
 
 	def __unicode__(self):
 		return self.nome.__str__()
@@ -27,6 +27,12 @@ class Cliente(models.Model):
 	cpf = models.CharField(max_length = 11)
 	cargo = models.CharField(max_length=150)
 	setor_locacao = models.ForeignKey(Setor)
+
+	def __unicode__(self):
+		return self.nome.__str__()
+
+	class Meta:
+		verbose_name_plural =  "Clientes para Solicitação de help Desk"
 
 class Documentos(models.Model):
 	"""
@@ -54,6 +60,38 @@ class Help_Desk(models.Model):
 	data_requisicao = models.DateField(help_text="Data da solicitação de ajuda")
 	hora_requisicao = models.TimeField(help_text="Hora da solicitação de ajuda")
 	prioridade_da_acao = models.CharField(max_length=5, choices=PRIORIDADE)
-	
+
 	def __unicode__(self):
 		return self.titulo.__str__()
+
+	class Meta:
+		verbose_name_plural = "Help_Desk, registros de solicitação de ajuda."
+
+class Categoria_noticia(models.Model):
+	"""
+		Classe para categorizar as notícias, tipo se são de coletiva, se são Ação
+		integrada, etc.
+	"""
+	titulo = models.CharField(max_length = 150)
+
+	def __unicode__(self):
+		return self.titulo.__str__()
+
+	class Meta:
+		verbose_name_plural = "Categoria das notícias."
+
+class Noticias(models.Model):
+	"""
+		Classe destinada para a notificação como geral. Serão listadas notícias
+	de até dois dias no template.
+	"""
+	titulo = models.CharField(max_length=300)
+	categoria_da_noticia = models.ForeignKey(Categoria_noticia)
+	data_publicacao = models.DateTimeField(auto_now=True)
+	nota = models.TextField()
+
+	def __unicode__(self):
+		return self.titulo
+
+	class Meta:
+		verbose_name_plural = "Notícias para disponibilizar no portal."
