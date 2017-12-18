@@ -3,4 +3,21 @@
   <div style="width: 90%;text-align: center;">
     <img src="/media/logo.png" height="300" width="700" >
   </div>
+  <footer>
+		<div id="topo" class="col-12">
+      <div class="col-2">
+        <h3 style="color:white; text-align:center; margin-top:15px; font-size:170%;" >Fique Sabendo!</h3>
+      </div>
+		</div>
+
+    <div class="col-6" style="background-color:white;">
+
+      {% for i in noticias%}
+        <span style="background-color: #0A1B2A; color:#F4FA58; padding: inherit;"> {{i.categoria_da_noticia}}</span><span style="color:grey;"> {{i.data_publicacao}}</span><h2 style="color:#0A1B2A;">{{i.titulo}}</h2>
+        <p style="color:grey; max-width: 1000px;  max-height: 1000px;">{{i.nota}}</p>
+      {%endfor%}
+    </div>
+    <div class="clearfix"></div><br>
+	</footer>
+<div style="background-color:green">casd</div>
 {% endblock %}

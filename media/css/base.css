@@ -3532,4 +3532,6 @@ input[type="button"].btn-block {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
->>>>>>> a25c7ab5613c9cb7ce96459f1318abbd9437e8d2
+.tites {
+  color: white;
+}
