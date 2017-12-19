@@ -23,7 +23,6 @@ $(document).ready(function() {
 		$( "#busca" ).hide();
 		$( "#envolve-menus" ).toggle();
 	});
-
 	$("#busca-mobile").click(function() {
 		$("#envolve-menus").hide();
 		$( "#busca" ).toggle();
@@ -36,14 +35,12 @@ $(function() {
 		play: {effect: "slide", interval: 5000, auto: true, pauseOnHover: true},
 		effect: {slide: {speed: 1000}}
 	});
-
 	$("#mais-noticias").slidesjs({
 		height: 215,
 		play: {effect: "slide"},
 		effect: {slide: {speed: 1000}},
 		pagination: {active: false}
 	});
-
 	$("#banner-capa").slidesjs({
 		height: 100,
 		navigation: {active: false},
@@ -130,13 +127,14 @@ $(function() {
 			</nav>
 		</div>
 	</header>
-
-  {% block conteudo %}
-
-	{% endblock %}
-
+  <div style="width: 100%;text-align: center;">
+    <img src="/media/logo.png" height="300" width="700" >
+  </div>
+  <div style="background-color:#97ad25">casd</div>
 </div>
+{% block noticias %}
 
+{% endblock %}
 <footer>
 	<div id="footer-conteudo">
 		<div class="row">

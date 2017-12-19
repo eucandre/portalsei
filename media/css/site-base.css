@@ -524,6 +524,17 @@ conteudo #portal-conteudo {
 	color: #8181F7;
 }
 
+noticias {
+	position: relative;
+	bottom: 0;
+	height: 300px;
+	margin-top: -300px;
+	min-width: 990px;
+	background: black;
+}
+
+
+
 /* Rodape */
 footer {
 	position: relative;
