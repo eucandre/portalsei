@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block noticias %}
 <noticias>
-  <div id="topo" class="col-12">
+  <div id="topo" class="col-12" style="max-width:100%;">
     <div class="col-2">
       <h3 style="color:white; text-align:center; margin-top:15px; font-size:170%;" >Fique Sabendo!</h3>
     </div>
@@ -9,10 +9,10 @@
   <div class="col-6" style="background-color:white;">
     {% for i in noticias%}
       <span style="background-color: #0A1B2A; color:#F4FA58; padding: inherit;"> {{i.categoria_da_noticia}}</span><span style="color:grey;"> {{i.data_publicacao}}</span><h2 style="color:#0A1B2A;">{{i.titulo}}</h2>
-      <span style="color:grey;"> {{i.nota | slice:"0:255"}} ...</span>
+      <span style="color:grey;"> {{i.nota | slice:"0:255"}} ...</span><br><br>
     {%endfor%}
   </div>
-  <div class="col-6">
+  <div class="col-6" >
     <h2 style="color:white;font-weight:bold; text-align: center;">Sistema Eletrônico de Informações</h2>
     <p style="color:white;">Sistema de gestão de processos e documentos eletrônicos, com práticas inovadoras de trabalho,
     tendo como principais características a libertação do paradigma do papel como suporte físico para
