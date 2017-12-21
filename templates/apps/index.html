@@ -8,7 +8,7 @@
   </div>
   
     <div class="col-6" style="background-color:white;">
-      {% for i in noticias%}
+      {% for i in noticias %}
         <span style="background-color: #0A1B2A; color:#F4FA58; padding: inherit;"> {{i.categoria_da_noticia}}</span><span style="color:grey;"> {{i.data_publicacao}}</span><h2 ><a href="#" style="text-decoration: none;color:#0A1B2A;">{{i.titulo}}</a></h2>
         <span style="color:grey;"> {{i.nota | slice:"0:255"}} <a href="#" style="text-decoration:none; font-weight: bold;">Continua ...</a></span><br><br>
       {%endfor%}
