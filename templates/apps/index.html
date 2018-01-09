@@ -6,12 +6,15 @@
       <h3 style="color:white; text-align:center; margin-top:15px; font-size:170%;" >Fique Sabendo!</h3>
     </div>
   </div>
-  
+    
     <div class="col-6" style="background-color:white;">
+      <br>
       {% for i in noticias %}
         <span style="background-color: #0A1B2A; color:#F4FA58; padding: inherit;"> {{i.categoria_da_noticia}}</span><span style="color:grey;"> {{i.data_publicacao}}</span><h2 ><a href="#" style="text-decoration: none;color:#0A1B2A;">{{i.titulo}}</a></h2>
         <span style="color:grey;"> {{i.nota | slice:"0:255"}} <a href="#" style="text-decoration:none; font-weight: bold;">Continua ...</a></span><br><br>
-      {%endfor%}
+        {% empty %}
+          <h2 class="title">VAZIO!</h2><small>Adicionar notícias<a href="http://127.0.0.1:8000/admin/app_documentos/noticias/add/"> Aqui</a></small>
+      {% endfor %}
     </div>
   
   <div class="col-6" >

@@ -5,6 +5,18 @@ from django.db import models
 
 PRIORIDADE = ((u'ALTA', 'ALTA'),(u'MEDIA','MEDIA'),(u'BAIXA','BAIXA'))
 
+TIPO_DOCUMENTO = ((u'MANUAL', 'MANUAL'), (u'PLANO_DE_COMUNICACAO', ('PLANO_DE_COMUNICACAO')),(u'DOCUMENTO_DE_APOIO','DOCUMENTO_DE_APOIO'))
+
+
+class Tipo_Documento(models.Model):
+	nome = models.CharField(choices= TIPO_DOCUMENTO, max_length=150)
+
+	def __unicode__(self):
+		return self.nome.__str__()
+
+	class Meta:
+		verbose_name_plural = "Tipo de Documento"
+
 class Setor(models.Model):
 	"""
 		Classe para definição do setor na Secretaria ou no órgão.
@@ -41,6 +53,7 @@ class Documentos(models.Model):
 	 o mes o dia
 	"""
 	titulo = models.CharField(max_length = 300)
+	tipo = models.ForeignKey(Tipo_Documento)
 	repositorio_documento =  models.FileField("documentos/%Y/%m/%d/")
 	descricao = models.TextField()
 
