@@ -1,7 +1,10 @@
 # coding=utf-8
+
 from __future__ import unicode_literals
 
 from django.db import models
+
+from django.contrib.auth.models import *
 
 PRIORIDADE = ((u'ALTA', 'ALTA'),(u'MEDIA','MEDIA'),(u'BAIXA','BAIXA'))
 
@@ -10,6 +13,7 @@ TIPO_DOCUMENTO = ((u'MANUAL', 'MANUAL'), (u'PLANO_DE_COMUNICACAO', ('PLANO_DE_CO
 
 class Tipo_Documento(models.Model):
 	nome = models.CharField(choices= TIPO_DOCUMENTO, max_length=150)
+	user = models.ForeignKey(User)
 
 	def __unicode__(self):
 		return self.nome.__str__()
@@ -22,12 +26,13 @@ class Setor(models.Model):
 		Classe para definição do setor na Secretaria ou no órgão.
 	"""
 	nome = models.CharField(max_length = 150)
+	user = models.ForeignKey(User)
 
 	class Meta:
 		verbose_name_plural = "Setor da Secretaria ou de Órgão."
 
 	def __unicode__(self):
-		return self.nome.__str__()
+		return self.nome
 
 class Cliente(models.Model):
 	"""
@@ -39,9 +44,10 @@ class Cliente(models.Model):
 	cpf = models.CharField(max_length = 11)
 	cargo = models.CharField(max_length=150)
 	setor_locacao = models.ForeignKey(Setor)
+	user = models.ForeignKey(User)
 
 	def __unicode__(self):
-		return self.nome.__str__()
+		return self.nome
 
 	class Meta:
 		verbose_name_plural =  "Clientes para Solicitação de help Desk"
@@ -56,6 +62,7 @@ class Documentos(models.Model):
 	tipo = models.ForeignKey(Tipo_Documento)
 	repositorio_documento =  models.FileField("documentos/%Y/%m/%d/")
 	descricao = models.TextField()
+	user = models.ForeignKey(User)
 
 	class Meta:
 		verbose_name_plural = "Documentos, help desk e materiais de apoio"
@@ -73,6 +80,7 @@ class Help_Desk(models.Model):
 	data_requisicao = models.DateField(help_text="Data da solicitação de ajuda")
 	hora_requisicao = models.TimeField(help_text="Hora da solicitação de ajuda")
 	prioridade_da_acao = models.CharField(max_length=5, choices=PRIORIDADE)
+	user = models.ForeignKey(User)
 
 	def __unicode__(self):
 		return self.titulo.__str__()
@@ -86,9 +94,10 @@ class Categoria_noticia(models.Model):
 		integrada, etc.
 	"""
 	titulo = models.CharField(max_length = 150)
+	user = models.ForeignKey(User)
 
 	def __unicode__(self):
-		return self.titulo.__str__()
+		return self.titulo
 
 	class Meta:
 		verbose_name_plural = "Categoria das notícias."
@@ -102,7 +111,8 @@ class Noticias(models.Model):
 	categoria_da_noticia = models.ForeignKey(Categoria_noticia)
 	data_publicacao = models.DateTimeField(auto_now=True)
 	nota = models.TextField()
-
+	user = models.ForeignKey(User)
+	
 	def __unicode__(self):
 		return self.titulo
 

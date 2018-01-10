@@ -110,7 +110,7 @@
 	}
 	
 	header #envolve-busca {
-		width: 30%;
+		width: 100%;
 	}
 	
 	header #busca {
@@ -146,7 +146,7 @@
 	header #envolve-menus {
 		background: #eee;
 		margin-bottom: 0;
-		display: none;
+		display: inline-block;
 	}
 	
 	header nav .col-12 {
@@ -159,6 +159,7 @@
 	
 	header #menu-superior ul li, header #menu-inferior ul li {
 		float: none;
+		padding-left: : 15px;
 		text-align: center;
 		margin-right: 0;
 	}
@@ -183,6 +184,7 @@
 	
 	header #menu-inferior #menu-item-noticias {
 		width: auto
+		padding-left:15px;
 	}
 	
 	header #menu-inferior #menu-item-noticias .submenu,
