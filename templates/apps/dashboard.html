@@ -13,11 +13,11 @@
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">{{ user }}</a>
+	      
 	    </div>
 	    <ul class="nav navbar-nav">
-	      <li class="active"><a href="#">Início</a></li>
-	      <li><a href="#">Documentos</a></li>
+	      <li class="active"><a href="/dashboard/">Início</a></li>
+	      <li><a href="/lista_documentos/">Documentos</a></li>
 	      <li><a href="#">Notícias</a></li>
 	    </ul>
 	    <form class="navbar-form navbar-left" action="/action_page.php">
@@ -30,7 +30,9 @@
 	</nav>
 
 
-	<div class="col-md-12"><h1>Administração do portal Sei!</h1></div>
+	<div class="col-md-12"><h1>Administração do portal Sei!</h1>
+		<small>Olá Você está na área de administração do portal Sei!, está logado como <a style="text-decoration: none; font-weight: bold;">{{user}} registrado no sistema desde {{user.date_joined}}</a></small>
+	</div>
 	{% block conteudo%}{% endblock %}
 </body>
 </html>
