@@ -60,7 +60,7 @@ class Documentos(models.Model):
 	"""
 	titulo = models.CharField(max_length = 300)
 	tipo = models.ForeignKey(Tipo_Documento)
-	repositorio_documento =  models.FileField("documentos/%Y/%m/%d/")
+	repositorio_documento =  models.FileField(upload_to="documentos/%Y/%m/%d/")
 	descricao = models.TextField()
 	user = models.ForeignKey(User)
 
@@ -112,7 +112,7 @@ class Noticias(models.Model):
 	data_publicacao = models.DateTimeField(auto_now=True)
 	nota = models.TextField()
 	user = models.ForeignKey(User)
-	
+
 	def __unicode__(self):
 		return self.titulo
 

@@ -1,0 +1,44 @@
+{% extends 'apps/dashboard.html' %}
+{% block conteudo %}
+
+<div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
+	<div class="col-md-10 col-sm-10 col-xs-10 center-block">
+		<div class="alert alert-success">
+  		<strong>Lista</strong> com relação dos <small class="alert-link">Documentos no portal</small>
+		</div>
+	  <ul class="col-md-6">
+	    {% for i in lista %}
+	        <a href="#" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a><a href="/Editar/{{ i.id }}/"> Editar</a><a href="/Delete/{{i.id}}"> Excluir</a><br>
+	      {% empty %}
+	        <div class="row fontawesome-icon-list">
+	          <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/InsereDocumento/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>
+	        </div>
+	    {% endfor %}
+	  </ul>
+	</div>
+</div>
+	    
+<div class="col-sm-4 center">
+	{% if lista.has_other_pages %}
+	  <ul class="pagination">
+	    {% if lista.has_previous %}
+	      <li><a href="?page={{ lista.previous_page_number }}">&laquo;</a></li>
+	    	{% else %}
+	      	<li class="disabled"><span>&laquo;</span></li>
+	    {% endif %}
+	    {% for i in lista.paginator.page_range %}
+	      {% if lista.number == i %}
+	        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+	        {% else %}
+	          <li><a href="?page={{ i }}">{{ i }}</a></li>
+	      {% endif %}
+	    {% endfor %}
+	    {% if lista.has_next %}
+	      <li><a href="?page={{ lista.next_page_number }}">&raquo;</a></li>
+	      {% else %}
+	       	<li class="disabled"><span>&raquo;</span></li>
+	    {% endif %}
+	  </ul>
+	{% endif %}
+</div>
+{% endblock %}

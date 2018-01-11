@@ -39,7 +39,7 @@ class FormDocumentos(forms.ModelForm):
 
 class FormHelpDesk(forms.ModelForm):
 	titulo = forms.CharField(max_length=300, widget=forms.TextInput(attrs={'class':'form-control'}))
-	setor_locacao = forms.ModelChoiceField(queryset=Setor.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+	setor_requisicao = forms.ModelChoiceField(queryset=Setor.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
 	requisitor = forms.ModelChoiceField(queryset=Cliente.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
 	data_requisicao = forms.DateField(widget=forms.TextInput(attrs={'type':'date','class':'form-control'}))
 	hora_requisicao = forms.TimeField(widget=forms.TextInput(attrs={'type':'time','class':'form-control'}))

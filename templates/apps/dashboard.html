@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard Portal Sei!</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">{{ user }}</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="#">Início</a></li>
+	      <li><a href="#">Documentos</a></li>
+	      <li><a href="#">Notícias</a></li>
+	    </ul>
+	    <form class="navbar-form navbar-left" action="/action_page.php">
+	      <div class="form-group">
+	        <input type="text" class="form-control" placeholder="Procurar por" name="search">
+	      </div>
+	      <button type="submit" class="btn navbar-expand-lg navbar-light bg-light">Pesquisar</button>
+	    </form>
+	  </div>
+	</nav>
+
+
+	<div class="col-md-12"><h1>Administração do portal Sei!</h1></div>
+	{% block conteudo%}{% endblock %}
+</body>
+</html>
