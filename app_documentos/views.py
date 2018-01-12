@@ -25,7 +25,7 @@ def Apresentacao(request):
 		return render (request, 'apps/index.html')
 
 def dashboard(request):
-	return render(request, 'apps/dashboard.html')
+	return render(request, 'apps/index_dashboard.html')
 
 
 def lista_documentos(request):

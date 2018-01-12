@@ -118,3 +118,10 @@ class Noticias(models.Model):
 
 	class Meta:
 		verbose_name_plural = "Notícias para disponibilizar no portal."
+
+class Agenda(models.Model):
+	evento = models.CharField(max_length=150)
+	
+
+
+	
