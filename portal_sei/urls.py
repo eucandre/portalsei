@@ -17,8 +17,12 @@ urlpatterns = [
     url(r'^InsereCliente',InsereCliente),
     url(r'^InsereDocumento',InsereDocumento),
     url(r'^InsereHelpDesk',InsereHelpDesk),
+    url(r'^InsereNoticia',InsereNoticia),
 
     url(r'^lista_documentos', lista_documentos),
-    url(r'^Editar/(?P<nr_item>\d+)/$',EditaDocumento),
-    url(r'^Delete/(?P<nr_item>\d+)/$', DocumentoDelete),
+    url(r'^EditarDocumento/(?P<nr_item>\d+)/$',EditaDocumento),
+    url(r'^Delete_Documento/(?P<nr_item>\d+)/$', DocumentoDelete),
+
+    url(r'^EditaNoticia/(?P<nr_item>\d+)/$',EditaNoticia),
+    
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

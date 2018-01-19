@@ -49,4 +49,24 @@ class FormHelpDesk(forms.ModelForm):
 		fields = ('titulo','setor_requisicao','requisitor','data_requisicao','hora_requisicao','prioridade_da_acao')
 
 
+class FormNoticias(forms.ModelForm):
+	
+	titulo = forms.CharField(max_length=300, widget=forms.TextInput(attrs={'class':'form-control'}))
+	categoria_da_noticia = forms.ModelChoiceField(queryset=Categoria_noticia.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+	# data_publicacao = forms.DateField(widget=forms.TextInput(attrs={'type':'date','class':'form-control'}))
+	destaque = forms.BooleanField()
+	publicado = forms.BooleanField()
+	tags_lista = forms.ModelChoiceField(queryset=Tag.objects.all(), widget=forms.SelectMultiple())
+	imagem = forms.FileField()
+	video = forms.FileField()
+	credito_midia_imagem = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+	credito_midia_video = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+	documentos_complementares = forms.FileField()
+	chapeu = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+	bigode = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+	reporter = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
 
+	class Meta:
+		model = Noticias
+		fields = ('titulo', 'categoria_da_noticia','destaque','publicado','imagem','video','documentos_complementares',
+			'chapeu','bigode','reporter','tags_lista', 'nota','credito_midia_imagem','credito_midia_video' )

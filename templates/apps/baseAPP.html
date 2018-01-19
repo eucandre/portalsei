@@ -1,184 +1,146 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-		<link rel="shortcut icon" href="/media/SEI-ALAGOAS.png" />
-		<title>Portal SEI! - Governo do Estado de Alagoas</title>
-
-		<link rel="stylesheet" type="text/css" href="/media/css/base.css" media="all">
-		<link rel="stylesheet" type="text/css" href="/media/css/elementos.css" media="all">
-		<link rel="stylesheet" type="text/css" href="/media/css/site-base.css" media="all">
-		<link rel="stylesheet" type="text/css" href="/media/css/responsividade.css" media="all">
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-
-		<script src="/media/js/jquery-1.11.3.min.js"></script>
-		<script src="/media/js/jquery.slides.min.js"></script>
-
-		<script type="text/javascript">
-		$(document).ready(function() {
-			$("#menu-mobile").click(function() {
-				$( "#busca" ).hide();
-				$( "#envolve-menus" ).toggle();
-			});
-			$("#busca-mobile").click(function() {
-				$("#envolve-menus").hide();
-				$( "#busca" ).toggle();
-			});
-		});
-		$(function() {
-			$("#noticias-rotativas").slidesjs({
-				height: 708,
-				navigation: {active: false},
-				play: {effect: "slide", interval: 5000, auto: true, pauseOnHover: true},
-				effect: {slide: {speed: 1000}}
-			});
-			$("#mais-noticias").slidesjs({
-				height: 215,
-				play: {effect: "slide"},
-				effect: {slide: {speed: 1000}},
-				pagination: {active: false}
-			});
-			$("#banner-capa").slidesjs({
-				height: 100,
-				navigation: {active: false},
-				play: {effect: "slide", interval: 5000, auto: true, pauseOnHover: true},
-				effect: {slide: {speed: 1000}},
-				pagination: {active: true}
-			});
-		});
-		</script>
-
-	</head>
-	<body>
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3&appId=465486936800543";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-		<div id="global">
-			<header>
-				<div id="topo">
-					<div id="topo-conteudo" class="row row-no-bottom">
-						<div id="envolve-logo" class="col-md-6 col-sm-3 col-lg-6">
-							<a id="logo" href="#">Agência Alagoas</a>
-						</div>
-						<div id="envolve-busca" class="col-md-3 col-sm-3 col-lg-3">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portal SEI! - Governo do Estado de Alagoas</title>
+  <link rel="shortcut icon" href="/media/SEI-ALAGOAS.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
 	
-							<div id="busca">
-								<form name="form1" method="post" action="">
-									<input id="botao-buscar" name="textfield" type="submit" class="form-control" value="">
-									<input id="buscar" name="textfield" type="text" class="form-control" placeholder="Buscar">
-								</form>
-						  </div>
-						</div>
-					</div>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/media/css/site-base.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/media/css/base.css" media="all">
+
+  <style>
+		.dropbtn {
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 16px;
+		    font-size: 16px;
+		    border: none;
+		}
+
+		.dropdown {
+		    position: relative;
+		    display: inline-block;
+		}
+
+		.dropdown-content {
+		    display: none;
+		    position: absolute;
+		    background-color: #f9f9f9;
+		    min-width: 160px;
+		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		    z-index: 1;
+		}
+
+		.dropdown-content a {
+		    color: black;
+		    padding: 12px 16px;
+		    text-decoration: none;
+		    display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #f1f1f1}
+
+		.dropdown:hover .dropdown-content {
+		    display: block;
+		    width:  150%;
+		}
+
+		.dropdown:hover .dropbtn {
+		    background-color: #3e8e41;
+		    border: 1px;
+		}
+
+		hr { 
+		  border : 0;
+		  height: 1px; 
+		  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
+		}
+
+		.footer {
+		   position: fixed;
+		   left: 0;
+		   bottom: 0;
+		   width: 100%;
+		   background-color: #4572f1;
+		   color: white;
+		   text-align: center;
+		}
+
+	</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<header>
+		<div id="topo">
+			<div id="topo-conteudo" class="row row-no-bottom">
+				<div id="envolve-logo" class="col-md-6 col-sm-3 col-lg-6">
+					<a id="logo" href="#">Agência Alagoas</a>
 				</div>
-
-				<div id="envolve-menus" >
-						
-					<nav class="row row-no-bottom">
-						<div class="col-md-12">
-							<div id="nav-superior" class="col-12 col-no-left-right">
-								<div id="menu-superior" class="col-10 col-no-left">
-									<ul>
-										<li><a href="#">Início</a></li>
-										<li><a href="#">Institucional</a></li>
-										<li><a href="#">Legislação</a></li>
-										<li><a href="#">Acesso à Informação</a></li>
-										<li><a href="#">Conselhos e Fóruns</a></li>
-										<li><a href="#">Newsletter</a></li>
-									</ul>
-								</div>
-								<div id="menu-redes-sociais" class="col-2 col-no-right">
-									<ul>
-										<li><a id="social-youtube" href="#">Youtube</a></li>
-										<li><a id="social-twitter" href="#">Twitter</a></li>
-										<li><a id="social-facebook" href="#">Facebook</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</nav>
-
-					<nav class="row row-no-bottom">
-						<div id="menu-inferior" class="col-md-12" style="right: -4%;">
-							<ul>
-								<li><a href="#">Acesso ao SEI!</a></li>
-								<li><a href="#">Sobre</a></li>
-								<li><a href="#">Documentos</a></li>
-								<li><a href="#">Notícias</a></li>
-								<li><a href="#">Treinamentos</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</header>
-			
-		<div class="col-md-12">
-			 {% block noticias %}
-
-			 {% endblock %}
+			</div>
 		</div>	
+	</header>
+	<div class="col-md-12">
+		<div class="col-md-4">
+		  <form class="navbar-form" role="search">
+		    <div class="input-group add-on">
+		      <input class="form-control" placeholder="Buscar" name="srch-term" id="srch-term" type="text">
+		      <div class="input-group-btn">
+		        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+		      </div>
+		    </div>
+		  </form>
 		</div>
-		
-		<footer>
-			<div id="footer-conteudo">
-				<div class="row">
-					<div id="footer-info" class="col-6">
-						<a id="footer-logo" href="#">
-							<h3 style="color: white;">Portal Sei!</h3><br />
-							<h5 style="color: white;">Governo do Estado de Alagoas</h5>
-						</a>
-						<div id="telefone">
-							<h3>(82) 3315.3615 | (82) 3315.3620</h3>
-						</div>
-						<address>
-							Rua Cincinato Pinto, 193<br />
-							Centro<br />
-							Maceió-Alagoas
-						</address>
-					</div>
-					<div class="col-3">
-						<ul class="footer-menu">
-							<li><a href="#" style="color: white;">Início</a></li>
-								<li><a href="#" style="color: white;">Institucional</a></li>
-								<li><a href="#" style="color: white;">Legislação</a></li>
-								<li><a href="#" style="color: white;">Acesso à Informação</a></li>
-								<li><a href="#" style="color: white;">Conselhos e Fóruns</a></li>
-								<li><a href="#" style="color: white;">Newsletter</a></li>
-						</ul>
-					</div>
-					<div class="col-3">
-						<ul class="footer-menu">
-							<li><a href="#" style="color: white;">Notícias</a></li>
-							<li><a href="#" style="color: white;">Serviços</a></li>
-							<li><a href="#" style="color: white;">Órgãos vinculados</a></li>
-							<li><a href="#" style="color: white;">Mês do Servidor 2016</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<div id="assinatura">
-			<div id="assinatura-conteudo" class="row row-no-bottom">
-				<div class="col-12">
-					<span id="copyright">Governo do Estado de Alagoas © - 2015</span>
-					<a id="itec-footer" href="http://www.itec.al.gov.br"></a>
-				</div>
+		<div class="col-md-4">
+			<div class="dropdown">
+			  <button class="dropbtn">O SEI ALAGOAS
+			  	<i class="fa fa-caret-down"></i>
+			  </button>
+
+			  <div class="dropdown-content" >
+			    <a href="#" style="color: #3e8e41;">Link 1</a>
+			    <a href="#" style="color: #3e8e41;">Link 2</a>
+			    <a href="#" style="color: #3e8e41;">Link 3</a>
+			  </div>
 			</div>
 		</div>
-	</body>
-	
-</html>	
+
+		<div class="col-md-4">
+			<div class="dropdown">
+			  <button class="dropbtn" style="background-color: #4572f1">SOBRE O SEI 
+			  	<i class="fa fa-caret-down"></i>
+			  </button>
+
+			  <div class="dropdown-content" >
+			    <a href="#" style="color: #3e8e41;">Link 1</a>
+			    <a href="#" style="color: #3e8e41;">Link 2</a>
+			    <a href="#" style="color: #3e8e41;">Link 3</a>
+			  </div>
+			</div>
+		</div>
+	<br><br>
+	<hr>
+	<div class="container-fluid ">
+  
+	  <div class="row">
+	    <div class="col-xs-9 col-md-7" >{%block noticias%}{%endblock%}</div>
+	    
+	  </div>
+  
+	</div>
+  <div class="footer col-md-12 col-sm-12 col-xs-12 col-lg-12">
+  	<p>Footer</p>
+	</div>  
+</body>
+</html>

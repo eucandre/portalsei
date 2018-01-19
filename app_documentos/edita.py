@@ -60,3 +60,15 @@ def EditaHelpDesk(request, nr_item):
 	else:
 		form = FormHelpDesk(instance=item)
 	return render(request, 'apps/insere_help_desk.html', {'form':form})		
+
+def EditaNoticia(request, nr_item):
+	item = Noticias.objects.get(pk=nr_item)
+	if request.method == 'POST':
+		form  =  FormNoticias(request.POST)
+		if form.is_valid():
+			item = form.save(commit = False)
+			item.user = request.user
+			item.save()
+	else:
+		form = FormNoticias(instance=item)
+	return render(request, 'apps/insere_noticia.html', {'form':form})		

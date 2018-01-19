@@ -6,12 +6,28 @@ from django.db import models
 
 from django.contrib.auth.models import *
 
+import json
+
+import ast
+
 PRIORIDADE = ((u'ALTA', 'ALTA'),(u'MEDIA','MEDIA'),(u'BAIXA','BAIXA'))
 
 TIPO_DOCUMENTO = ((u'MANUAL', 'MANUAL'), (u'PLANO_DE_COMUNICACAO', ('PLANO_DE_COMUNICACAO')),(u'DOCUMENTO_DE_APOIO','DOCUMENTO_DE_APOIO'))
 
 
+class Tag(models.Model):
+	tag_nome = models.CharField(max_length=150, unique= True)
+
+	def __unicode__(self):
+		return self.tag_nome
+
+	class Meta:
+		verbose_name_plural = 'Palavras-Chave para atribuir às notícias'
+
+
 class Tipo_Documento(models.Model):
+
+
 	nome = models.CharField(choices= TIPO_DOCUMENTO, max_length=150)
 	user = models.ForeignKey(User)
 
@@ -110,6 +126,20 @@ class Noticias(models.Model):
 	titulo = models.CharField(max_length=300)
 	categoria_da_noticia = models.ForeignKey(Categoria_noticia)
 	data_publicacao = models.DateTimeField(auto_now=True)
+	destaque = models.BooleanField()
+	publicado = models.BooleanField()
+	imagem = models.FileField(upload_to="noticias/%Y/%m/%d/", blank= True)
+	video = models.FileField(upload_to="videos_noticias/%Y/%m/%d/", blank= True)
+	credito_midia_imagem = models.CharField(max_length=150, blank=True)
+	credito_midia_video = models.CharField(max_length=150, blank=True)
+	documentos_complementares = models.FileField(upload_to="documentos/%Y/%m/%d/", blank= True)
+	#Campos para apresentação da notícia
+	chapeu = models.CharField(max_length=150)
+	bigode = models.CharField(max_length=150)
+	reporter = models.CharField(max_length=150)
+	tags_lista = models.ManyToManyField(Tag)
+	
+
 	nota = models.TextField()
 	user = models.ForeignKey(User)
 

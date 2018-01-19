@@ -1,0 +1,98 @@
+{% extends 'apps/baseAPP.html' %}
+{% block noticias %}
+	<script>
+  $( function() {
+    var availableTags = [{% for i in tags %} 
+    	"{{i}}",
+    {%endfor%}];
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+ 
+    $( "#id_tags_lista" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableTags, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+  } );
+  </script>
+
+	<h2>Notícia</h2>
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="col-md-12">
+			<div class="col-md-10">
+				<label for="id_titulo">Título</label><input class="form-control" id="id_titulo" maxlength="300" type="text" name="titulo" required>
+			</div>
+			<div class="col-md-5">
+				<label for="id_categoria_da_noticia">Categoria </label>
+				<select class="form-control" id="id_categoria_da_noticia" name="categoria_da_noticia" required>
+					<option value="" selected="selected">
+						Selecione uma Categoria
+					</option>
+				</select>
+			</div>
+				
+			<div class="col-md-5">
+			  <label for="id_tags_lista">Tags </label>
+			  <input id="id_tags_lista" name="tags_lista" size="50" class="form-control" required>
+			</div>
+			<br>	
+
+			<div class="col-md-5">
+				<label for="id_destaque">Destaque</label>
+				<input name="destaque" type="checkbox" id="id_destaque" required>
+				<label for="id_publicado">publicado</label>
+				<input name="publicado" type="checkbox" id="id_publicado" required>
+			</div>
+		  
+
+
+      <div class="container">
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+        <div id="demo" class="collapse">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+      </div>
+
+
+		  <br>
+  		<div class="col-md-12">
+  			<button type=submit class="btn btn-success">ENVIAR</button>
+  			<button type=reset class="btn btn-danger">CANCELAR</button>
+  		</div>	
+    </div>
+	</form>
+	<br>	
+{% endblock %}

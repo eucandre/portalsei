@@ -56,3 +56,15 @@ def InsereHelpDesk(request):
 	else:
 		form = FormHelpDesk()
 	return render(request, 'apps/insere_help_desk.html', {'form':form})		
+
+def InsereNoticia(request):
+	item  = Tag.objects.all()
+	if request.method == 'POST':
+		form  =  FormNoticias(request.POST)
+		if form.is_valid():
+			item = form.save(commit = False)
+			item.user = request.user
+			item.save()
+	else:
+		form = FormNoticias()
+	return render(request, 'apps/insere_noticia.html', {'form':form, 'tags':item})		
