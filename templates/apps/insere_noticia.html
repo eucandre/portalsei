@@ -1,51 +1,6 @@
 {% extends 'apps/baseAPP.html' %}
 {% block noticias %}
-	<script>
-  $( function() {
-    var availableTags = [{% for i in tags %} 
-    	"{{i}}",
-    {%endfor%}];
-    function split( val ) {
-      return val.split( /,\s*/ );
-    }
-    function extractLast( term ) {
-      return split( term ).pop();
-    }
- 
-    $( "#id_tags_lista" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableTags, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-  } );
-  </script>
-
+	
   
 	<h2>Notícia</h2>
 	<form action="" method="post" enctype="multipart/form-data" novalidate>
@@ -67,7 +22,7 @@
         {{ form.non_field_errors }}
       {% endif %}
     </div>
-  {% endif %}
+    {% endif %}
 
       {{ form.non_field_errors }}
       <div class="col-md-12">
@@ -82,7 +37,8 @@
         
       <div class="col-md-5">
         <label for="id_tags_lista">Tags </label>
-        <input id="id_tags_lista" name="tags_lista" size="50" class="form-control tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable" required>
+        <!-- <input id="id_tags_lista" name="tags_lista" size="50" class="form-control tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable" required> -->
+        {{form.tags_lista}}
       </div>
       <br>  
 
