@@ -10,6 +10,8 @@ import json
 
 import ast
 
+from froala_editor.fields import FroalaField
+
 PRIORIDADE = ((u'ALTA', 'ALTA'),(u'MEDIA','MEDIA'),(u'BAIXA','BAIXA'))
 
 TIPO_DOCUMENTO = ((u'MANUAL', 'MANUAL'), (u'PLANO_DE_COMUNICACAO', ('PLANO_DE_COMUNICACAO')),(u'DOCUMENTO_DE_APOIO','DOCUMENTO_DE_APOIO'))
@@ -128,19 +130,21 @@ class Noticias(models.Model):
 	data_publicacao = models.DateTimeField(auto_now=True)
 	destaque = models.BooleanField()
 	publicado = models.BooleanField()
-	imagem = models.FileField(upload_to="noticias/%Y/%m/%d/", blank= True)
+	imagem = models.FileField(upload_to="imagens/%Y/%m/%d/", blank= True)
 	video = models.FileField(upload_to="videos_noticias/%Y/%m/%d/", blank= True)
 	credito_midia_imagem = models.CharField(max_length=150, blank=True)
+	legenda_da_imagem = models.CharField(max_length=150, blank=True)
 	credito_midia_video = models.CharField(max_length=150, blank=True)
+	legenda_do_video = models.CharField(max_length=150, blank=True)
 	documentos_complementares = models.FileField(upload_to="documentos/%Y/%m/%d/", blank= True)
-	#Campos para apresentação da notícia
-	chapeu = models.CharField(max_length=150)
-	bigode = models.CharField(max_length=150)
-	reporter = models.CharField(max_length=150)
+	# #Campos para apresentação da notícia
+	chapeu = models.CharField(max_length=150 , blank=True)
+	bigode = models.CharField(max_length=150 , blank=True)
+	reporter = models.CharField(max_length=150 , blank=True)
 	tags_lista = models.ManyToManyField(Tag)
 	
 
-	nota = models.TextField()
+	nota = FroalaField()
 	user = models.ForeignKey(User)
 
 	def __unicode__(self):

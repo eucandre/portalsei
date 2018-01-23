@@ -60,7 +60,7 @@ def InsereHelpDesk(request):
 def InsereNoticia(request):
 	item  = Tag.objects.all()
 	if request.method == 'POST':
-		form  =  FormNoticias(request.POST)
+		form  =  FormNoticias(request.POST, request.FILES)
 		if form.is_valid():
 			item = form.save(commit = False)
 			item.user = request.user

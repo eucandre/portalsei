@@ -1,5 +1,6 @@
 from django import forms
 from .models import *
+from froala_editor.widgets import FroalaEditor
 
 PRIORIDADE = ((u'ALTA', 'ALTA'),(u'MEDIA','MEDIA'),(u'BAIXA','BAIXA'))
 
@@ -53,20 +54,27 @@ class FormNoticias(forms.ModelForm):
 	
 	titulo = forms.CharField(max_length=300, widget=forms.TextInput(attrs={'class':'form-control'}))
 	categoria_da_noticia = forms.ModelChoiceField(queryset=Categoria_noticia.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
-	# data_publicacao = forms.DateField(widget=forms.TextInput(attrs={'type':'date','class':'form-control'}))
+	#data_publicacao = forms.DateField(widget=forms.TextInput(attrs={'type':'date','class':'form-control'}))
 	destaque = forms.BooleanField()
 	publicado = forms.BooleanField()
-	tags_lista = forms.ModelChoiceField(queryset=Tag.objects.all(), widget=forms.SelectMultiple())
+	tags_lista = forms.ModelMultipleChoiceField(queryset=Tag.objects.all(), widget=forms.SelectMultiple(attrs={'class':'form-control'}))
 	imagem = forms.FileField()
-	video = forms.FileField()
+  
 	credito_midia_imagem = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+	video = forms.FileField()
 	credito_midia_video = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
-	documentos_complementares = forms.FileField()
+	legenda_do_video = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+	legenda_do_imagem = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+	# documentos_complementares = forms.FileField()
 	chapeu = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
 	bigode = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
 	reporter = forms.CharField(max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
-
+	nota  = forms.CharField(widget=FroalaEditor)
 	class Meta:
 		model = Noticias
-		fields = ('titulo', 'categoria_da_noticia','destaque','publicado','imagem','video','documentos_complementares',
-			'chapeu','bigode','reporter','tags_lista', 'nota','credito_midia_imagem','credito_midia_video' )
+		fields = ('titulo', 'categoria_da_noticia','destaque','publicado',
+			'imagem','video','documentos_complementares','chapeu',
+			'bigode','reporter','tags_lista', 'nota',
+			'credito_midia_imagem','legenda_do_video','legenda_do_imagem','credito_midia_video' )
+
+		
