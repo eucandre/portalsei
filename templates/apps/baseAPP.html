@@ -291,15 +291,17 @@ document.all.myEditor.html = "";
 
 	              <!-- Wrapper for slides -->
 
-	              <div class="carousel-inner col-md-5">
-	                <div class="item active col-md-5">
-	                  <img src="/media/{{imagem1}}" width="500" height="500" align="left">
+	              <div class="carousel-inner col-md-5 col-lg-5"  style="min-width: 100%; height: 300px; ">
+	                <div class="item active ">
 	                  <a href="" style="font-weight: bold; font-size: 19px;">{{titulo1}}</a>
+	                  <img src="/media/{{imagem1}}" width="500" height="500" align="left">
+	                  
 	                </div>
 
-	                <div class="item">
-	                  <img src="/media/{{imagem2}}" width="500" height="500" align="left">
+	                <div class="item ">
 	                  <a href="" style="font-weight: bold; font-size: 19px;">{{titulo2}}</a>
+	                  <img src="/media/{{imagem2}}" width="500" height="500" align="left">
+	                  
 	                </div>
 
 	                <div class="item">
@@ -340,20 +342,21 @@ document.all.myEditor.html = "";
 		<img src="/media/imagens_portal/traço-azul.png">
 		<div class="col-md-12 col-lg-12">
 			<div class="container">
-				<div class="col-md-4">
-					<button type="button" class="btn btn-success" style="background-color: #b0ca63;">Pesquisa Processual
+				<div class="col-md-4 col-lg-5">
+					<button type="button" class="btn btn-success" style="background-color: #b0ca63;  width: 200px;">Pesquisa Processual
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</button>
-					<button type="button" class="btn btn-success" style="background-color: #b0ca63;">Usuário Externo
+					<button type="button" class="btn btn-success" style="background-color: #b0ca63; width: 200px;"> Usuário Externo       
 					<i class="fa fa-users" aria-hidden="true"></i>
 				</button>
-				</div>
-				<div class="col-md-12">
-					<button type="button" class="btn btn-success" style="background-color: #338bd0;">Autenticidade de Documentos
+				</div>	
+			</div>
+
+			<div class="container">
+				<button type="button" class="btn btn-success" style="background-color: #338bd0;">Autenticidade de Documentos
 					<i class="fa fa-check" aria-hidden="true"></i>
 				</button>
-				</div>
-			</div>
+			</div>	
 		</div>		
 	</body>
 </html>
