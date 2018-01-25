@@ -174,9 +174,16 @@
      }
     
  
-.footer,
-    .push {
-      height: 50px;
+.footer {
+   /*position: static;*/
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 10%;
+   background-color: #338bd0;
+   color: white;
+   text-align: center;
+}
 </style>
 <script type="text/javascript">
 function PegarTexto(f) {
@@ -251,7 +258,7 @@ document.all.myEditor.html = "";
 				</div>
 			</div>
 			<div class="col-md-3">
-				<button class="btn btn-danger" style="width: 300px;">AMBIENTE DE TREINAMENTO</button>
+				<a href="http://hmlsip.sei.al.gov.br/sip/login.php?sigla_orgao_sistema=AL&sigla_sistema=SEI&infra_url=L3NlaS8="><button class="btn btn-danger" style="width: 300px;">AMBIENTE DE TREINAMENTO</button></a>
 			</div>
 			<div class="col-md-3">
 				<div class="dropdown">
@@ -275,8 +282,8 @@ document.all.myEditor.html = "";
 				<footer></footer> -->
 		</div>
 		<br>
-		<footer class="footer">
+		<div class="footer">
   Footer 
-</footer>
+</div>
 	</body>
 </html>
