@@ -28,7 +28,7 @@ def Apresentacao(request):
 		titulo2 =obj_noticias.values()[len(Noticias.objects.all())-(len(Noticias.objects.all())-1)].get('titulo')
 
 		img3 = obj_noticias.values()[len(Noticias.objects.all())-(len(Noticias.objects.all())-2)].get('imagem')
-		titulo3 =obj_noticias.values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('titulo')
+		titulo3 =obj_noticias.values()[len(Noticias.objects.all())-(len(Noticias.objects.all())-2)].get('titulo')
 
 		video = obj_noticias.values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('video')
 		if len(obj_noticias) > 0:

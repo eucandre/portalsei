@@ -67,22 +67,21 @@
       </div>
       {%endif%}
     </div>
-    {%for i in noticias%}
-      <div class="col-md-5 col-xs-5 col-lg-7" >
+    {% for i in noticias %}
+      <div class="col-md-5 col-lg-5">
         <span style="background-color: #0A1B2A; color:#F4FA58; padding: inherit;"> {{i.categoria_da_noticia}}</span><span style="color:grey;"> {{i.data_publicacao}}</span><h2 ><a href="#" style="text-decoration: none;color:#0A1B2A;">{{i.titulo}}</a></h2>
       </div>
-      <div class="col-md-5 col-xs-5 col-lg-7" >  
-        <span style="color:grey;"> {{i.nota | slice:"0:255" | safe}} <a href="#" style="text-decoration:none; font-weight: bold;">Continua ...</a></span><br><br>
-        {% empty %}
-          <h2 class="title">VAZIO!</h2><small>Adicionar notícias<a href="http://127.0.0.1:8000/admin/app_documentos/noticias/add/"> Aqui</a></small>
-      </div>   
-    {% endfor %}
-  </div>
-  <hr>
-  <a href="#" style="right: 100px; font-weight: bold; color: #b0ca63; text-decoration: none; float: right;">Mais notícias</a>
+
+      {% empty %}
+      <h2 class="title">VAZIO!</h2><small>Adicionar notícias<a href="http://127.0.0.1:8000/admin/app_documentos/noticias/add/"> Aqui</a></small>
+      
+    {% endfor %}  
+    <hr>
+    <a href="#" style="right: 100px; font-weight: bold; color: #b0ca63; text-decoration: none; float: right;">Mais notícias</a>
     </div>
   </div>
   <br>
+
   <img src="/media/imagens_portal/traço-azul.png">
   <div class="col-md-12 col-lg-12">
     <div class="container">
@@ -101,8 +100,8 @@
         <i class="fa fa-check" aria-hidden="true"></i>
       </button>
     </div>  
-  </div>    
-  <div class="container">
+    </div>    
+    <div class="container">
     <video width="1000" controls >
         <source src="/media/{{video}}" type="video/mp4" style="float: center;">
         <source src="mov_bbb.ogg" type="video/ogg">

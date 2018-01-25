@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_documentos',
     'froala_editor',
+    'capacitacoes',
 ]
 
 MIDDLEWARE = [
