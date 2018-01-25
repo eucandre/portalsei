@@ -33,128 +33,128 @@
 <link href="{{STATIC_URL}}froala_editor/css/froala_editor.min.css" type="text/css" media="all" rel="stylesheet" />
 <link href="{{STATIC_URL}}froala_editor/css/froala_style.min.css" type="text/css" media="all" rel="stylesheet" />
 <script type="text/javascript" src="{{STATIC_URL}}froala_editor/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 
+<style type="text/css">
+	/* Styles go here */
 
-  <style type="text/css">
-  	/* Styles go here */
+	.md-editor.active {
+	  border-color: #66afe9;
+	  outline: 0;
+	  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+	  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+	}
+	.md-editor {
+	  display: block;
+	  border: 1px solid #ddd;
+	}
+	.md-editor>textarea {
+	  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	  font-size: 13px;
+	  outline: 0;
+	  margin: 0;
+	  display: block;
+	  width: 100%;
+	  border: 0;
+	  padding: 10px;
+	  border-top: 1px dashed #ddd;
+	  border-bottom: 1px dashed #ddd;
+	  border-radius: 0;
+	  box-shadow: none;
+	  background: #eee;
+	}
+	.md-editor .md-footer,
+	.md-editor>.md-header {
+	  display: block;
+	  padding: 6px 4px;
+	  background: #f5f5f5;
+	  margin: 0;
+	}
+	.btn-input {
+	  overflow: hidden;
+	  position: relative;
+	  cursor: pointer;
+	}
+	.btn-input input[type="file"] {
+	  height: 30px;
+	  cursor: pointer;
+	  position: absolute;
+	  top: 0px;
+	  right: 0px;
+	  z-index: 2;
+	  opacity: 0.0;
+	  /* Standard: FF gt 1.5, Opera, Safari */
+	  filter: alpha(opacity=0);
+	  /* IE lt 8 */
+	  -ms-filter: "alpha(opacity=0)";
+	  /* IE 8 */
+	  -khtml-opacity: 0.0;
+	  /* Safari 1.x */
+	  -moz-opacity: 0.0;
+	  /* FF lt 1.5, Netscape */
+}
 
-		.md-editor.active {
-		  border-color: #66afe9;
-		  outline: 0;
-		  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
-		  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
-		}
-		.md-editor {
-		  display: block;
-		  border: 1px solid #ddd;
-		}
-		.md-editor>textarea {
-		  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-		  font-size: 13px;
-		  outline: 0;
-		  margin: 0;
-		  display: block;
-		  width: 100%;
-		  border: 0;
-		  padding: 10px;
-		  border-top: 1px dashed #ddd;
-		  border-bottom: 1px dashed #ddd;
-		  border-radius: 0;
-		  box-shadow: none;
-		  background: #eee;
-		}
-		.md-editor .md-footer,
-		.md-editor>.md-header {
-		  display: block;
-		  padding: 6px 4px;
-		  background: #f5f5f5;
-		  margin: 0;
-		}
-		.btn-input {
-		  overflow: hidden;
-		  position: relative;
-		  cursor: pointer;
-		}
-		.btn-input input[type="file"] {
-		  height: 30px;
-		  cursor: pointer;
-		  position: absolute;
-		  top: 0px;
-		  right: 0px;
-		  z-index: 2;
-		  opacity: 0.0;
-		  /* Standard: FF gt 1.5, Opera, Safari */
-		  filter: alpha(opacity=0);
-		  /* IE lt 8 */
-		  -ms-filter: "alpha(opacity=0)";
-		  /* IE 8 */
-		  -khtml-opacity: 0.0;
-		  /* Safari 1.x */
-		  -moz-opacity: 0.0;
-		  /* FF lt 1.5, Netscape */
+</style>
+
+<style>
+	.dropbtn {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 16px;
+	    font-size: 16px;
+	    border: none;
 	}
 
-  </style>
+	.dropdown {
+	    position: relative;
+	    display: inline-block;
+	}
 
-  <style>
-		.dropbtn {
-		    background-color: #4CAF50;
-		    color: white;
-		    padding: 16px;
-		    font-size: 16px;
-		    border: none;
-		}
+	.dropdown-content {
+	    display: none;
+	    position: absolute;
+	    background-color: #f9f9f9;
+	    min-width: 160px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	    z-index: 1;
+	}
 
-		.dropdown {
-		    position: relative;
-		    display: inline-block;
-		}
+	.dropdown-content a {
+	    color: black;
+	    padding: 12px 16px;
+	    text-decoration: none;
+	    display: block;
+	}
 
-		.dropdown-content {
-		    display: none;
-		    position: absolute;
-		    background-color: #f9f9f9;
-		    min-width: 160px;
-		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		    z-index: 1;
-		}
+	.dropdown-content a:hover {background-color: #f1f1f1}
 
-		.dropdown-content a {
-		    color: black;
-		    padding: 12px 16px;
-		    text-decoration: none;
-		    display: block;
-		}
+	.dropdown:hover .dropdown-content {
+	    display: block;
+	    width:  150%;
+	}
 
-		.dropdown-content a:hover {background-color: #f1f1f1}
+	.dropdown:hover .dropbtn {
+	    background-color: #3e8e41;
+	    border: 1px;
+	}
 
-		.dropdown:hover .dropdown-content {
-		    display: block;
-		    width:  150%;
-		}
+	hr { 
+	  border : 0;
+	  height: 1px; 
+	  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
+	}
 
-		.dropdown:hover .dropbtn {
-		    background-color: #3e8e41;
-		    border: 1px;
-		}
+	.footer {
+	   position: fixed;
+	   left: 0;
+	   bottom: 0;
+	   width: 100%;
+	   background-color: #4572f1;
+	   color: white;
+	   text-align: center;
+	}
 
-		hr { 
-		  border : 0;
-		  height: 1px; 
-		  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
-		}
-
-		.footer {
-		   position: fixed;
-		   left: 0;
-		   bottom: 0;
-		   width: 100%;
-		   background-color: #4572f1;
-		   color: white;
-		   text-align: center;
-		}
-
-	</style>
+</style>
 
 <style type="text/css">
 
@@ -183,20 +183,28 @@
    background-color: #338bd0;
    color: white;
    text-align: center;
-}
-</style>
-<script type="text/javascript">
-function PegarTexto(f) {
-f.elements.Mensagem.value = document.all.myEditor.html
-+ "";
-}
-function Limpar() {
-document.all.myEditor.html = "";
-}
+	}
+	</style>
+	<script type="text/javascript">
+	function PegarTexto(f) {
+	f.elements.Mensagem.value = document.all.myEditor.html
+	+ "";
+	}
+	function Limpar() {
+	document.all.myEditor.html = "";
+	}
 
 </script>
-<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'textarea' });</script> -->
+<script type="text/javascript">
+	$(window).scroll(function(){ // função para pegar o movimento do scroll (barra de rolagem)
+	    var top = $(window).scrollTop(); // aqui vc pega a posição da página
+	    if(top > 80){ // verifica a posição da página
+	        $("#menTop").stop().animate({ opacity: 0 }, 800); // aqui vc aplica o fade no menu  
+	    }else{ 
+	        $("#menTop").stop().animate({ opacity: 1.0 }, 800); // aqui vc tira o fade no menu
+	    }
+	});
+</script>
 
 <script type="text/javascript">
 	$(function() {
@@ -282,8 +290,8 @@ document.all.myEditor.html = "";
 				<footer></footer> -->
 		</div>
 		<br>
-		<div class="footer">
-  Footer 
-</div>
+		<div class="footer" id="menTop">
+		  Footer 
+			</div>
 	</body>
 </html>
