@@ -8,10 +8,11 @@ class Evento(models.Model):
 	data_realizacao = models.DateField()
 	hora_realizacao = models.TimeField()
 	video_promocional = models.FileField(upload_to="videos_capacitacoes/%Y/%m/%d/")
-	Notas = models.TextField()
+	Notas = models.TextField(help_text="acrescentar conteúdos explicativos com links e outros.")
 
 	def __unicode__(self):
 		return self.titulo
 
 	class Meta:
 		verbose_name_plural = "Eventos de Capacitações do Portal SEI"
+

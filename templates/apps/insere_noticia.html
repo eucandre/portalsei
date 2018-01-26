@@ -2,99 +2,101 @@
 {% block noticias %}
 	
   	<h2 style="color: #b0ca63;">Notícia</h2>
+    <div class="col-lg-12 col-md-12">
+    	<form action="" method="post" enctype="multipart/form-data" novalidate>
+    		{% csrf_token %}
 
-  	<form action="" method="post" enctype="multipart/form-data" novalidate>
-  		{% csrf_token %}
-
-      {% if form.errors %}
-      <div class="alert alert-error">
-        <h4>Resolva essses problemas</h4>
-        <ul>
-          {% for field in form %}
-            {% if field.errors %}
-              {% for error in field.errors %}
-                <li><a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
-              {% endfor %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-        {% if form.non_field_errors %}
-          {{ form.non_field_errors }}
+        {% if form.errors %}
+        <div class="alert alert-error">
+          <h4>Resolva essses problemas</h4>
+          <ul>
+            {% for field in form %}
+              {% if field.errors %}
+                {% for error in field.errors %}
+                  <li><a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% if form.non_field_errors %}
+            {{ form.non_field_errors }}
+          {% endif %}
+        </div>
         {% endif %}
-      </div>
-      {% endif %}
 
-        {{ form.non_field_errors }}
-        <div class="col-md-12">
-        <div class="col-md-10">
-          <label for="id_titulo">Título</label><input class="form-control" id="id_titulo" maxlength="300" type="text" name="titulo" required>
-        </div>
-        <div class="col-md-5">
-          <label for="id_categoria_da_noticia">Categoria </label>
-          {{form.categoria_da_noticia.label_tag}}
-          {{form.categoria_da_noticia}}
-        </div>
-          
-        <div class="col-md-5">
-          <label for="id_tags_lista">Tags </label>
-          <!-- <input id="id_tags_lista" name="tags_lista" size="50" class="form-control tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable" required> -->
-          {{form.tags_lista}}
-        </div>
-        <br>  
+          {{ form.non_field_errors }}
+          <div class="col-md-12">
+          <div class="col-md-10">
+            <label for="id_titulo">Título</label><input class="form-control" id="id_titulo" maxlength="300" type="text" name="titulo" required>
+          </div>
+          <div class="col-md-5">
+            <label for="id_categoria_da_noticia">Categoria </label>
+            {{form.categoria_da_noticia.label_tag}}
+            {{form.categoria_da_noticia}}
+          </div>
+            
+          <div class="col-md-5">
+            <label for="id_tags_lista">Tags </label>
+            <!-- <input id="id_tags_lista" name="tags_lista" size="50" class="form-control tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable" required> -->
+            {{form.tags_lista}}
+          </div>
+          <br>  
 
-        <div class="col-md-5">
-          <label for="id_destaque">Destaque</label>
-          <input name="destaque" type="checkbox" id="id_destaque" required>
-          <label for="id_publicado">publicado</label>
-          <input name="publicado" type="checkbox" id="id_publicado" required>
-        </div>
-        <div class="container">
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Conteúdo</button>
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1">Imagem</button>
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2">Mídia</button>
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo3">Campos Estras</button>
+          <div class="col-md-5">
+            <label for="id_destaque">Destaque</label>
+            <input name="destaque" type="checkbox" id="id_destaque" required>
+            <label for="id_publicado">publicado</label>
+            <input name="publicado" type="checkbox" id="id_publicado" required>
+          </div>
+          <div class="container">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Conteúdo</button>
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1">Imagem</button>
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2">Mídia</button>
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo3">Campos Estras</button>
 
-        </div>
-        <div class="col-md-12 col-lg-12">
-          <div id="demo" class="collapse">
-            <div class="row">
-              <br />
-              {{form.media}}
-              {{form.nota}}
+          </div>
+          <div class="col-md-12 col-lg-12" style="z-index: 2;">
+            <div id="demo" class="collapse">
+              <div class="row">
+                <br />
+                {{form.media}}
+                {{form.nota}}
+              </div>
+            </div>
+            <div id="demo1" class="collapse">
+              <div class="row" style="z-index: 2;">
+                <br />
+                {{form.imagem}}
+                {{form.credito_midia_imagem.label_tag}}
+                {{form.credito_midia_imagem}}
+                {{form.legenda_do_imagem.label_tag}}
+                {{form.legenda_do_imagem}}
+              </div>
+            </div>
+            <div id="demo2" class="collapse">
+              <div class="row">
+                <br />
+                {{form.video}}
+                {{form.credito_midia_video.label_tag}}
+                {{form.credito_midia_video}}
+                {{form.legenda_do_video.label_tag}}
+                {{form.legenda_do_video}}            
+              </div>
+            </div>
+            <div id="demo3" class="collapse">
+              <div class="row">
+                <br />
+                  {{form.chapeu.label_tag}}
+                  {{form.chapeu}}
+                  {{form.bigode.label_tag}}
+                  {{form.bigode}}
+                  {{form.reporter.label_tag}}
+                  {{form.reporter}}
+              </div>
             </div>
           </div>
-          <div id="demo1" class="collapse">
-            <div class="row" style="z-index: 2;">
-              <br />
-              {{form.imagem}}
-              {{form.credito_midia_imagem.label_tag}}
-              {{form.credito_midia_imagem}}
-              {{form.legenda_do_imagem.label_tag}}
-              {{form.legenda_do_imagem}}
-            </div>
-          </div>
-          <div id="demo2" class="collapse">
-            <div class="row">
-              <br />
-              {{form.video}}
-              {{form.credito_midia_video.label_tag}}
-              {{form.credito_midia_video}}
-              {{form.legenda_do_video.label_tag}}
-              {{form.legenda_do_video}}            
-            </div>
-          </div>
-          <div id="demo3" class="collapse">
-            <div class="row">
-              <br />
-                {{form.chapeu.label_tag}}
-                {{form.chapeu}}
-                {{form.bigode.label_tag}}
-                {{form.bigode}}
-                {{form.reporter.label_tag}}
-                {{form.reporter}}
-            </div>
-          </div>
-        </div>
-  	</form> 
+    	</form>
+    </div> 
 	<br>	
+  <div class="col-md-12 col-lg-12" ><hr></div>
 {% endblock %}

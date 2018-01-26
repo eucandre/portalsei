@@ -1,0 +1,39 @@
+{% extends 'apps/baseAPP.html' %}
+{% block noticias %}
+	<h2 style="color: #b0ca63;">Capacitação</h2>
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="col-md-12">
+			<div class="col-md-10">
+				{{form.titulo.label_tag}}
+				{{form.titulo}}
+			</div>
+			<div class="col-md-4">
+				{{form.data_realizacao.label_tag}}
+				{{form.data_realizacao}}
+			</div>
+			<div class="col-md-4">
+				{{form.hora_realizacao.label_tag}}
+				{{form.hora_realizacao}}
+			</div>
+
+			<div class="col-md-4">
+				{{form.video_promocional.label_tag}}
+				{{form.video_promocional}}
+			</div>
+
+			<div class="col-md-12">
+				<br>
+				{{form.media}}
+				{{form.nota.label_tag}}
+				{{form.nota}}
+			</div>
+		</div>
+		<br>
+		<div class="col-md-12">
+			<button type=submit class="btn btn-success">ENVIAR</button>
+			<button type=reset class="btn btn-danger">CANCELAR</button>
+		</div>	
+	</form>
+	<br>
+{% endblock %}

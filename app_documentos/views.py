@@ -55,3 +55,17 @@ def lista_documentos(request):
 	except EmptyPage:
 		p_lista = paginator.page(paginator.num_pages)
 	return render(request, 'apps/lista_documentos.html',{'lista':p_lista})
+
+def lista_noticias(request):
+	lista = Noticias.objects.all()
+	page = request.GET.get("page",1)
+	paginator = Paginator(lista, 3)
+	try:
+		# page = int(request.Get.get("page",1))
+		p_lista = paginator.page(page)
+	except PageNotAnInteger:
+		p_lista = paginator.page(1)
+	except EmptyPage:
+		p_lista = paginator.page(paginator.num_pages)
+	return render(request, 'apps/lista_noticias.html',{'lista':p_lista})
+

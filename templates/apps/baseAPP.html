@@ -183,6 +183,8 @@
    background-color: #338bd0;
    color: white;
    text-align: center;
+   opacity: 0.5;
+   filter: Alpha(opacity=50); 
 	}
 	</style>
 	<script type="text/javascript">
@@ -229,7 +231,7 @@
 		<div id="topo">
 			<div id="topo-conteudo" class="row row-no-bottom">
 				<div id="envolve-logo" class="col-md-6 col-sm-3 col-lg-6">
-					<a id="logo" href=".">Agência Alagoas</a>
+					<a id="logo" href="/">Agência Alagoas</a>
 				</div>
 			</div>
 		</div>	
@@ -284,7 +286,7 @@
 		<div class="container-fluid ">
 	  
 		  <div class="row">
-		    <div class="col-xs-9 col-md-7" >{%block noticias%}{%endblock%}</div> 
+		    <div class="col-xs-9 col-md-7" style="z-index: 2;">{%block noticias%}{%endblock%}</div> 
 		  </div>
 		  <!-- <img src="/media/imagens_portal/traço-azul.png">
 				<footer></footer> -->
