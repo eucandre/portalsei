@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^InsereNoticia',InsereNoticia),
     url(r'^InsereCapacitacao', InsereCapacitacao),
     url(r'^lista_documentos', lista_documentos),
+    url(r'^lista_capacitacoes', lista_capacitacoes),
     url(r'^lista_noticias', lista_noticias),
     url(r'^EditarDocumento/(?P<nr_item>\d+)/$',EditaDocumento),
     url(r'^Delete_Documento/(?P<nr_item>\d+)/$', DocumentoDelete),

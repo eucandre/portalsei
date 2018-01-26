@@ -1,8 +1,31 @@
 {% extends 'apps/baseAPP.html' %}
 {% block noticias %}
 	<h2 style="color: #b0ca63;">Capacitação</h2>
-	<form action="" method="post" enctype="multipart/form-data">
+	<form action="." method="post" enctype="multipart/form-data">
+		
+
 		{% csrf_token %}
+
+
+		{% if form.errors %}
+      <div class="alert alert-error">
+        <h4>Resolva essses problemas</h4>
+        <ul>
+          {% for field in form %}
+            {% if field.errors %}
+              {% for error in field.errors %}
+                <li><a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {% if form.non_field_errors %}
+          {{ form.non_field_errors }}
+        {% endif %}
+      </div>
+    {% endif %}
+
+fields = ('titulo','data_realizacao','hora_realizacao','video_promocional','Notas')
 		<div class="col-md-12">
 			<div class="col-md-10">
 				{{form.titulo.label_tag}}
@@ -25,10 +48,12 @@
 			<div class="col-md-12">
 				<br>
 				{{form.media}}
-				{{form.nota.label_tag}}
-				{{form.nota}}
+				{{form.Notas.label_tag}}
+				{{form.Notas}}
 			</div>
+
 		</div>
+				
 		<br>
 		<div class="col-md-12">
 			<button type=submit class="btn btn-success">ENVIAR</button>

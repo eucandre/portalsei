@@ -10,7 +10,7 @@ class FormEventos(forms.ModelForm):
 	data_realizacao = forms.DateField(label= 'Data para a realização',widget=forms.TextInput(attrs={'type':'Date', 'class':'form-control'}))
 	hora_realizacao = forms.TimeField(label= 'Hora para a realização',widget=forms.TextInput(attrs={'type':'Time', 'class':'form-control'}))
 	video_promocional = forms.FileField(label= 'Vídeo',)
-	nota  = forms.CharField(label= 'Outro Conteúdo',widget=FroalaEditor)
+	Notas  = forms.CharField(label= 'Outro Conteúdo',widget=FroalaEditor)
 	class Meta:
 		model = Evento
 		fields = ('titulo','data_realizacao','hora_realizacao','video_promocional','Notas')

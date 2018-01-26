@@ -1,11 +1,14 @@
 {% extends 'apps/baseAPP.html' %}
 {% block noticias %}
 <h2 style="color: #b0ca63;">Lista de Notícias</h2>
+
+
 <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
 	<div class="col-md-10 col-sm-10 col-xs-10 center-block">
-	  <ul class="col-md-12">
+	  <ul class="col-md-12 list-group">
 	    {% for i in lista %}
-	        <a href="#" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a><a href="/Editar/{{ i.id }}/"> Editar</a><a href="/Delete/{{i.id}}"> Excluir</a><br>
+	        
+	    <li class="list-group-item"><a href="#" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a> <span class="badge"><a href="/Editar/{{ i.id }}/" style="color: white; text-decoration: none;"> Editar</a><a href="/Delete/{{i.id}}" style="color: #b0ca63; text-decoration: none;"> Excluir</a></span></li>
 	      {% empty %}
 	        <div class="row fontawesome-icon-list">
 	          <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/InsereDocumento/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>
