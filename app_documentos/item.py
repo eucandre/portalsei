@@ -21,7 +21,7 @@ def itemNoticia(request, nr_item):
         chapeu = Noticias.objects.all().values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('chapeu')
         bigode = Noticias.objects.all().values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('bigode')
         reporter = Noticias.objects.all().values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('reporter')
-        tags_lista = Noticias.objects.all().values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('tags_lista')
+        tags_lista = Noticias.objects.all().values()[0]#values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('tags_lista')
         nota = Noticias.objects.all().values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('nota')
         user = Noticias.objects.all().values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('user')
     except Noticias.DoesNotExist:
@@ -29,4 +29,5 @@ def itemNoticia(request, nr_item):
     return render(request, "app_capacitacoes/item_noticias.html", {'titulo': titulo, 'categoria':categoria, 'data':data
     	,'destaque':destaque,'publicado':publicado, 'imagem':imagem,'video':video, 'credito_midia_imagem':credito_midia_imagem,
     	'credito_midia_video':credito_midia_video,'legenda_da_imagem':legenda_da_imagem,'legenda_do_video':legenda_do_video,
-    	'documentos_complementares':documentos_complementares,'chapeu':chapeu, 'bigode':bigode, 'reporter':reporter, 'tags_lista':tags_lista})
+    	'documentos_complementares':documentos_complementares,'chapeu':chapeu, 'bigode':bigode, 'reporter':reporter,
+    	 'tags_lista':tags_lista, 'conteudo':nota})
