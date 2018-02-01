@@ -3,6 +3,8 @@ from django.core.paginator import *
 from django.http import *
 from .models import *
 from .forms import *
+from .serializers import *
+from rest_framework import viewsets
 
 
 def Apresentacao(request):
@@ -69,3 +71,7 @@ def lista_noticias(request):
 		p_lista = paginator.page(paginator.num_pages)
 	return render(request, 'apps/lista_noticias.html',{'lista':p_lista})
 
+class TagViewSet(viewsets.ModelViewSet):
+
+	queryset = Tag.objects.all().order_by('-tag_nome')
+	serializer_class = TagSerializer

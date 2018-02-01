@@ -11,10 +11,7 @@ from django.conf.urls.static import static
 from app_documentos.api import *
 from capacitacoes.views import *
 from tastypie.api import Api
-
-v1_api = Api(api_name='v1')
-v1_api.register(TagResourse())
-tags_resurse = TagResourse()
+from app_documentos.serializers import *
 
 
 urlpatterns = [
@@ -40,5 +37,4 @@ urlpatterns = [
 
     url(r'^froala_editor/', include('froala_editor.urls')),
     #api
-    url(r'^api/',include(tags_resurse.urls)),    
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
