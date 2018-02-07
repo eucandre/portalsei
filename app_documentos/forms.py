@@ -77,4 +77,8 @@ class FormNoticias(forms.ModelForm):
 			'bigode','reporter','tags_lista', 'nota',
 			'credito_midia_imagem','legenda_do_video','legenda_do_imagem','credito_midia_video' )
 
-		
+class FormCategoria(forms.ModelForm):
+	titulo = forms.CharField(max_length=300, widget=forms.TextInput(attrs={'class':'form-control'}))
+	class Meta:
+		model = Categoria_noticia
+		fields = ('titulo',)

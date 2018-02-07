@@ -72,3 +72,15 @@ def EditaNoticia(request, nr_item):
 	else:
 		form = FormNoticias(instance=item)
 	return render(request, 'apps/insere_noticia.html', {'form':form})		
+
+def EditaCategoria(request, nr_item):
+	item = Categoria_noticia.objects.get(pk= nr_item)
+	if request.method=='POST':
+		form = FormCategoria(request.POST)
+		if form.is_valid():
+			item = form.save(commit = False)
+			item.user = request.user
+			item.save()
+	else:
+		form = FormCategoria()
+	return render(request, 'apps/insere_categoria.html',{'form':form})

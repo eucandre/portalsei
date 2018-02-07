@@ -12,7 +12,7 @@ from app_documentos.api import *
 from capacitacoes.views import *
 from tastypie.api import Api
 from app_documentos.serializers import *
-
+from app_usuario.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,13 +25,15 @@ urlpatterns = [
     url(r'^InsereHelpDesk',InsereHelpDesk),
     url(r'^InsereNoticia',InsereNoticia),
     url(r'^InsereCapacitacao', InsereCapacitacao),
+    url(r'^InsereCategoria',InsereCategoria),
     url(r'^lista_documentos', lista_documentos),
     url(r'^lista_capacitacoes', lista_capacitacoes),
     url(r'^lista_noticias', lista_noticias),
     url(r'^noticias/(?P<nr_item>\d+)/$',itemNoticia),
     url(r'^EditarDocumento/(?P<nr_item>\d+)/$',EditaDocumento),
+    url(r'^EditarCategoria/(?P<nr_item>\d+)/$',EditaCategoria),
     url(r'^Delete_Documento/(?P<nr_item>\d+)/$', DocumentoDelete),
-
+    url(r'^login/$', user_login),
     url(r'^EditaNoticia/(?P<nr_item>\d+)/$',EditaNoticia),
     
 

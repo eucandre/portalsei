@@ -68,3 +68,14 @@ def InsereNoticia(request):
 	else:
 		form = FormNoticias()
 	return render(request, 'apps/insere_noticia.html', {'form':form, 'tags':item})		
+
+def InsereCategoria(request):
+	if request.method=='POST':
+		form = FormCategoria(request.POST)
+		if form.is_valid():
+			item = form.save(commit = False)
+			item.user = request.user
+			item.save()
+	else:
+		form = FormCategoria()
+	return render(request, 'apps/insere_categoria.html',{'form':form})

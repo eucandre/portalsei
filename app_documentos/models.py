@@ -12,6 +12,8 @@ import ast
 
 from froala_editor.fields import FroalaField
 
+
+
 PRIORIDADE = ((u'ALTA', 'ALTA'),(u'MEDIA','MEDIA'),(u'BAIXA','BAIXA'))
 
 TIPO_DOCUMENTO = ((u'MANUAL', 'MANUAL'), (u'PLANO_DE_COMUNICACAO', ('PLANO_DE_COMUNICACAO')),(u'DOCUMENTO_DE_APOIO','DOCUMENTO_DE_APOIO'))
@@ -19,7 +21,8 @@ TIPO_DOCUMENTO = ((u'MANUAL', 'MANUAL'), (u'PLANO_DE_COMUNICACAO', ('PLANO_DE_CO
 
 class Tag(models.Model):
 	tag_nome = models.CharField(max_length=150, unique= True)
-
+	user = models.ForeignKey(User)
+	
 	def __unicode__(self):
 		return self.tag_nome
 
@@ -142,7 +145,6 @@ class Noticias(models.Model):
 	bigode = models.CharField(max_length=150 , blank=True)
 	reporter = models.CharField(max_length=150 , blank=True)
 	tags_lista = models.ManyToManyField(Tag)
-	
 
 	nota = FroalaField()
 	user = models.ForeignKey(User)
@@ -155,7 +157,7 @@ class Noticias(models.Model):
 
 class Agenda(models.Model):
 	evento = models.CharField(max_length=150)
-	
+	user = models.ForeignKey(User)
 
 
 	

@@ -1,0 +1,14 @@
+{% extends "apps/baseAPP.html" %}
+
+{% block noticias %}
+	<div class="col-md-10 col-lg-10 ">
+    <h1 style="color: #b0ca63;">Log-in</h1>
+    
+    <form action="." method="post">
+    		{%csrf_token%}
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Logar" class="btn btn-success"></p>
+    </form>
+  </div>
+{%  endblock %}
