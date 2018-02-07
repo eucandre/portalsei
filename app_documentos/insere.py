@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import *
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def InsereTipoDocumento(request):
 	if request.method == 'POST':
 		form  =  FormTipoDocumento(request.POST)
@@ -13,6 +14,7 @@ def InsereTipoDocumento(request):
 		form = FormTipoDocumento()
 	return render(request, 'apps/insere_tipo_documento.html', {'form':form})
 
+@login_required
 def InsereSetor(request):
 	if request.method == 'POST':
 		form  =  FormSetor(request.POST)
@@ -24,6 +26,7 @@ def InsereSetor(request):
 		form = FormSetor()
 	return render(request, 'apps/insere_setor.html', {'form':form})	
 
+@login_required
 def InsereCliente(request):
 	if request.method == 'POST':
 		form  =  FormCliente(request.POST)
@@ -35,6 +38,7 @@ def InsereCliente(request):
 		form = FormCliente()
 	return render(request, 'apps/insere_cliente.html', {'form':form})	
 
+@login_required
 def InsereDocumento(request):
 	if request.method == 'POST':
 		form  =  FormDocumentos(request.POST, request.FILES)
@@ -46,6 +50,7 @@ def InsereDocumento(request):
 		form = FormDocumentos()
 	return render(request, 'apps/insere_documento.html', {'form':form})		
 
+@login_required
 def InsereHelpDesk(request):
 	if request.method == 'POST':
 		form  =  FormHelpDesk(request.POST)
@@ -57,6 +62,7 @@ def InsereHelpDesk(request):
 		form = FormHelpDesk()
 	return render(request, 'apps/insere_help_desk.html', {'form':form})		
 
+@login_required
 def InsereNoticia(request):
 	item  = Tag.objects.all()
 	if request.method == 'POST':
@@ -69,6 +75,7 @@ def InsereNoticia(request):
 		form = FormNoticias()
 	return render(request, 'apps/insere_noticia.html', {'form':form, 'tags':item})		
 
+@login_required
 def InsereCategoria(request):
 	if request.method=='POST':
 		form = FormCategoria(request.POST)

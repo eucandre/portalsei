@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from .forms import *
 
+
+@login_required
 def EditaTipoDocumento(request, nr_item):
 	item = Documentos.objects.get(pk = nr_item)
 	if request.method == 'POST':
@@ -13,6 +16,8 @@ def EditaTipoDocumento(request, nr_item):
 		form = FormTipoDocumento(instance=item)
 	return render(request, 'apps/insere_tipo_documento.html', {'form':form})
 
+
+@login_required
 def EditaSetor(request, nr_item):
 	item = Setor.objects.get(pk=nr_item)
 	if request.method == 'POST':
@@ -25,6 +30,8 @@ def EditaSetor(request, nr_item):
 		form = FormSetor(instance=item)
 	return render(request, 'apps/insere_setor.html', {'form':form})	
 
+
+@login_required
 def EditaCliente(request, nr_item):
 	item = Cliente.objects.get(pk=nr_item)
 	if request.method == 'POST':
@@ -37,6 +44,8 @@ def EditaCliente(request, nr_item):
 		form = FormCliente(instance=item)
 	return render(request, 'apps/insere_cliente.html', {'form':form})	
 
+
+@login_required
 def EditaDocumento(request, nr_item):
 	item = Documentos.objects.get(pk= nr_item)
 	if request.method == 'POST':
@@ -49,6 +58,8 @@ def EditaDocumento(request, nr_item):
 		form = FormDocumentos(instance= item)
 	return render(request, 'apps/insere_documento.html', {'form':form})		
 
+
+@login_required
 def EditaHelpDesk(request, nr_item):
 	item = Help_Desk.objects.get(pk=nr_item)
 	if request.method == 'POST':
@@ -61,6 +72,8 @@ def EditaHelpDesk(request, nr_item):
 		form = FormHelpDesk(instance=item)
 	return render(request, 'apps/insere_help_desk.html', {'form':form})		
 
+
+@login_required
 def EditaNoticia(request, nr_item):
 	item = Noticias.objects.get(pk=nr_item)
 	if request.method == 'POST':
@@ -73,6 +86,7 @@ def EditaNoticia(request, nr_item):
 		form = FormNoticias(instance=item)
 	return render(request, 'apps/insere_noticia.html', {'form':form})		
 
+@login_required
 def EditaCategoria(request, nr_item):
 	item = Categoria_noticia.objects.get(pk= nr_item)
 	if request.method=='POST':
