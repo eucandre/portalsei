@@ -78,6 +78,11 @@ def sobreSei(request):
 def historico(request):
 	return render(request, 'apps/historico_alagoas.html')
 
+def capacitacao(request):
+	return render(request, 'apps/capacitacao.html')
+
+def equipe(request):
+	return render(request, 'apps/equipe.html')
 class TagViewSet(viewsets.ModelViewSet):
 
 	queryset = Tag.objects.all().order_by('-tag_nome')
