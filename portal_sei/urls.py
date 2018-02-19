@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^InsereCapacitacao', InsereCapacitacao),
     url(r'^InsereCategoria',InsereCategoria),
     url(r'^lista_documentos', lista_documentos),
+    url(r'^historico', historico),
     url(r'^lista_capacitacoes', lista_capacitacoes),
     url(r'^lista_noticias', lista_noticias),
     url(r'^noticias/(?P<nr_item>\d+)/$',itemNoticia),

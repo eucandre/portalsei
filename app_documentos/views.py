@@ -75,6 +75,9 @@ def lista_noticias(request):
 def sobreSei(request):
 	return render(request, 'apps/OqueEoSei.html')
 
+def historico(request):
+	return render(request, 'apps/historico_alagoas.html')
+
 class TagViewSet(viewsets.ModelViewSet):
 
 	queryset = Tag.objects.all().order_by('-tag_nome')
