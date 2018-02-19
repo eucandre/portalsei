@@ -71,6 +71,10 @@ def lista_noticias(request):
 		p_lista = paginator.page(paginator.num_pages)
 	return render(request, 'apps/lista_noticias.html',{'lista':p_lista})
 
+
+def sobreSei(request):
+	return render(request, 'apps/OqueEoSei.html')
+
 class TagViewSet(viewsets.ModelViewSet):
 
 	queryset = Tag.objects.all().order_by('-tag_nome')

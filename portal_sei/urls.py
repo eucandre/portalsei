@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^login/$', user_login),
     url(r'^EditaNoticia/(?P<nr_item>\d+)/$',EditaNoticia),
     
-
+    url(r'sobreOsei',sobreSei),
     url(r'^froala_editor/', include('froala_editor.urls')),
     #api
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
