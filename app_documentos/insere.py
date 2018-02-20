@@ -86,3 +86,14 @@ def InsereCategoria(request):
 	else:
 		form = FormCategoria()
 	return render(request, 'apps/insere_categoria.html',{'form':form})
+
+def InsereTag(request):
+	if request.method=='POST':
+		form = FormTag(request.POST)
+		if form.is_valid():
+			item = form.save(commit = False)
+			item.user = request.user
+			item.save()
+	else:
+		form = FormTag()
+	return render(request, 'apps/insere_tag.html',{'form':form})

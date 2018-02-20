@@ -82,3 +82,9 @@ class FormCategoria(forms.ModelForm):
 	class Meta:
 		model = Categoria_noticia
 		fields = ('titulo',)
+
+class FormTag(forms.ModelForm):
+	tag_nome = forms.CharField(max_length=300, widget=forms.TextInput(attrs={'class':'form-control'}))
+	class Meta:
+		model = Tag
+		fields = ('tag_nome',)

@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^InsereNoticia',InsereNoticia),
     url(r'^InsereCapacitacao', InsereCapacitacao),
     url(r'^InsereCategoria',InsereCategoria),
+    url(r'^InsereTag',InsereTag),
     url(r'^lista_documentos', lista_documentos),
     url(r'^historico', historico),
     url(r'^lista_capacitacoes', lista_capacitacoes),
