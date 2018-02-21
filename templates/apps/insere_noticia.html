@@ -39,7 +39,12 @@
           <div class="col-md-5">
             <label for="id_tags_lista">Tags </label>
             <!-- <input id="id_tags_lista" name="tags_lista" size="50" class="form-control tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable" required> -->
-            {{form.tags_lista}}
+            {% if form.tags_lista %}  
+              {{form.tags_lista}}
+              {%else%}
+                <p>Sem tags</p>
+                <a href="javascript:abrir('/InsereTag/');"><i class="fa fa-plus-square-o"></i></a>
+            {%endif%}
           </div>
           <br>  
 
