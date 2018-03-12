@@ -9,7 +9,9 @@ def InsereCapacitacao(request):
 	if request.method == 'POST':
 		form = FormEventos(request.POST, request.FILES)
 		if form.is_valid():
-			form.save()
+			item = form.save(commit=False)
+			item.user = request.user
+			item.save()
 	else:
 		form = FormEventos()
 	return render(request, 'app_capacitacoes/insere_capacitacao.html',{'form':form})
@@ -32,7 +34,7 @@ def CapacitacaoDelete(request,nr_item):
   	doc.delete()
   	return redirect("/lista_capacitacoes/")
 
-@login_required
+
 def lista_capacitacoes(request):
 	lista = Evento.objects.all()
 	page = request.GET.get("page",1)

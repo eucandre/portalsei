@@ -6,7 +6,6 @@
 
 		{% csrf_token %}
 
-
 		{% if form.errors %}
       <div class="alert alert-error">
         <h4>Resolva essses problemas</h4>
@@ -25,7 +24,7 @@
       </div>
     {% endif %}
 
-fields = ('titulo','data_realizacao','hora_realizacao','video_promocional','Notas')
+
 		<div class="col-md-12">
 			<div class="col-md-10">
 				{{form.titulo.label_tag}}

@@ -8,7 +8,7 @@
 	  <ul class="col-md-12 list-group">
 	    {% for i in lista %}
 	        
-	    <li class="list-group-item"><a href="#" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a> <small>{{i.data_realizacao}}</small> <span class="badge"><a href="/Editar/{{ i.id }}/" style="color: white; text-decoration: none;"> Editar</a><a href="/Delete/{{i.id}}" style="color: #b0ca63; text-decoration: none;"> Excluir</a></span></li>
+	    <li class="list-group-item"><a href="#" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a> <small>{{i.data_realizacao}}</small> <span class="badge"><a href="/EditarCapacitacao/{{ i.id }}/" style="color: white; text-decoration: none;"> Editar</a><a href="/DeletaCapacitacao/{{i.id}}" style="color: #b0ca63; text-decoration: none;"> Excluir</a></span></li>
 	      {% empty %}
 	        <div class="row fontawesome-icon-list">
 	          <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/InsereCapacitacao/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>

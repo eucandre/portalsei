@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^InsereHelpDesk',InsereHelpDesk),
     url(r'^InsereNoticia',InsereNoticia),
     url(r'^InsereCapacitacao', InsereCapacitacao),
+    url(r'^EditarCapacitacao/(?P<nr_item>\d+)/$',editaCapacitacao),
+    url(r'^DeletaCapacitacao/(?P<nr_item>\d+)/$',CapacitacaoDelete),
     url(r'^InsereCategoria',InsereCategoria),
     url(r'^InsereTag',InsereTag),
     url(r'^lista_documentos', lista_documentos),
