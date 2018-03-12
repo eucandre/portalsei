@@ -1,4 +1,4 @@
-{% extends 'apps/baseAPP.html' %}
+{% extends 'apps/baseApp.html' %}
 {% block noticias %}
  <div class="container">
    <div class="box">
@@ -6,7 +6,7 @@
     </div>
   </div>
  </div>
-  <img src="/media/imagens_portal/traço-verde.png">
+  <img src="/media/imagens_portal/traço-verde.png" style="width: 100%">
     
   <div class="col-md-12 col-lg-12 col-xs-10" >
     <div style="margin-left: 200px; margin-right: auto;">
@@ -76,13 +76,13 @@
       <h2 class="title">VAZIO!</h2><small>Adicionar notícias<a href="/InsereNoticia/"> Aqui</a></small>
       
     {% endfor %}  
-    <hr>
+    <!-- <hr> -->
     <a href="/lista_noticias/" style="right: 100px; font-weight: bold; color: #b0ca63; text-decoration: none; float: right;">Mais notícias</a>
     </div>
   </div>
   <br>
 
-  <img src="/media/imagens_portal/traço-azul.png">
+  <img src="/media/imagens_portal/traço-azul.png" style="width: 100%">
   <!-- <div class="col-md-12 col-lg-12">
     <div class="container">
       <div class="col-md-4 col-lg-5">
@@ -100,7 +100,7 @@
       </button>
     </div>  
   </div>     -->
-  <div class="col-lg-12 col-md-12">
+  <div class="col-lg-12 col-md-12 col-sm-7">
     <div class="container">
       <button type="button" class="btn btn-success" style="background-color: #b0ca63;  width: 200px;margin-right: 1%;">Pesquisa Processual
         <i class="fa fa-search" aria-hidden="true"></i>
@@ -115,7 +115,7 @@
       </button>
     </div>  
   </div>
-    <hr>
+    
     <div class="container">
     <video width="1000" controls >
         <source src="/media/{{video}}" type="video/mp4" style="float: center;">

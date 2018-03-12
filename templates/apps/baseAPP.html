@@ -33,6 +33,11 @@
 	<script type="text/javascript" src="{{STATIC_URL}}froala_editor/js/froala_editor.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 	<style type="text/css">
 		/* Styles go here */
 
@@ -253,9 +258,10 @@
 			</div>
 		{%endif%}
 	</header>
-	<div class="col-md-12 col-lg-12">
-		<div class="col-md-12 col-lg-12">
-			<div class="col-md-3 col-lg-3" style="top: -5px;">
+	<div class="col-md-10 col-sm-9 col-lg-10 col-xl-7" >
+		<div class="row" style="width: 100%;">
+	    
+	    <div class="col-sm-3 col-md-3 col-lg-3 col-3 col-xl-3" style="right: -7%; top: -5px;">
 			  <form class="navbar-form" role="search">
 			    <div class="input-group add-on">
 			      <input class="form-control" placeholder="Buscar" name="srch-term" id="srch-term" type="text">
@@ -264,14 +270,14 @@
 			      </div>
 			    </div>
 			  </form>
-			</div>
-			<div class="col-md-3">
-				<div class="dropdown">
-				  <button class="dropbtn btn" style="background-color: #b0ca63;height: 10px; width: 300px; padding-top: 10px;
-	  padding-bottom: 25px;position: relative;">O SEI ALAGOAS
+	    </div> 
+
+	    <div class="col-sm-3 col-md-3" style="right: -5%;">
+	    	<div class="dropdown">
+	    		<button class="dropbtn btn" style="background-color: #b0ca63;height: 10px; width: 100%; padding-top: 10px;
+	  padding-bottom: 27px;position: relative;">O SEI ALAGOAS
 				  	<i class="fa fa-caret-down"></i>
 				  </button>
-				  
 				  <div class="dropdown-content" style="width: 250px; z-index: 5; opacity: 0.8;">
 				    <a href="/historico/" style="color: #3e8e41;">Histórico de Alagoas</a>
 				    <a href="/lista_documentos/" style="color: #3e8e41;">Guia de Implantação</a>
@@ -284,15 +290,18 @@
 				    <a href="/lista_documentos/" style="color: #3e8e41;">Documentos do Projeto</a>
 				    <a href="#" style="color: #3e8e41;">Equipe</a>
 				  </div>
-				</div>
-			</div>
-				<div class="col-md-3">
-					<a href="http://hmlsip.sei.al.gov.br/sip/login.php?sigla_orgao_sistema=AL&sigla_sistema=SEI&infra_url=L3NlaS8="><button class="btn btn-danger" style="width: 300px;height: 36px;">AMBIENTE DE TREINAMENTO</button></a>
-				</div>
-				<div class="col-md-3">
-					<div class="dropdown">
+	    	</div>
+	    </div>
+
+	    <div class="col-sm-3 col-md-3" style="right: -5%;">
+	    	<a href="http://hmlsip.sei.al.gov.br/sip/login.php?sigla_orgao_sistema=AL&sigla_sistema=SEI&infra_url=L3NlaS8="><button class="dropbtn btn" style="background-color: #d9534f;height: 37px; width: 115%; padding-top: 5%;
+	    padding-bottom: 9%; position: relative; margin-left: -30%;">AMBIENTE DE TREINAMENTO</button></a>
+	    </div>
+
+	    <div class="col-sm-3 col-md-3" style="right: -5%;">
+	    	<div class="dropdown">
 					  <button class="dropbtn btn" style="background-color: #338bd0;height: 10px; width: 158px; padding-top: 10px;
-	    padding-bottom: 25px; position: relative;">SOBRE O SEI 
+	    padding-bottom: 27px; position: relative; margin-left: -30%;">SOBRE O SEI 
 					  	<i class="fa fa-caret-down"></i>
 					  </button>
 					  <div class="dropdown-content" style="width: 250px; opacity: 0.8;">
@@ -300,21 +309,22 @@
 					    <a href="/lista_documentos/" style="color: #3e8e41;">Manuais</a>
 					  </div>
 					</div>
-				</div>
-			</div>
+	    </div>
+
+		</div>
 		<br><br>
-		<img src="/media/imagens_portal/traço-azul.png">
+		<img src="/media/imagens_portal/traço-azul.png" style="width: 100%">
 		<div class="container-fluid ">
 	  
-		  <div class="row">
-		    <div class="col-xs-9 col-md-7" style="z-index: 2;">{%block noticias%}{%endblock%}</div> 
-		  </div>
-		  <!-- <img src="/media/imagens_portal/traço-azul.png">
-				<footer></footer> -->
+	  <div class="row">
+	    <div class="col-sm-9 col-md-7" style="z-index: 2;">{%block noticias%}{%endblock%}</div> 
+	  </div>
+		
 		</div>
 		<br>
-		<div class="footer" id="menTop">
-		  Footer 
-			</div>
+  </div> 
+    <!-- Bootstrap core JavaScript -->
+    <script src="/media/vendor/jquery/jquery.min.js"></script>
+    <script src="/media/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>

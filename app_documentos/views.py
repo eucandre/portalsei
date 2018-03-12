@@ -38,6 +38,7 @@ def Apresentacao(request):
 				"titulo2":titulo2, 'video':video, 'imagem3':img3, 'titulo3':titulo3 })
 	else:
 		tamanho = 0
+		# return render (request, 'gerais/index.html', {"vazio":tamanho})
 		return render (request, 'apps/index.html', {"vazio":tamanho})
 
 def dashboard(request):
