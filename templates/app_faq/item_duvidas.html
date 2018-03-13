@@ -1,0 +1,19 @@
+{% extends 'apps/baseAPP.html' %}
+{% block noticias %}
+	<h1>{{item.titulo}}</h1>
+	
+	<!-- <small>{% for i in item.tags.all %}
+			{{i.tag_nome}}
+			{%endfor%}
+	</small> -->
+	<!-- <div class="col-md-9 col-sm-9">
+		{{item.resposta}}
+	</div> -->
+
+	<div class="panel panel-default">
+    <div class="panel-heading">{% for i in item.tags.all %}
+			{{i.tag_nome}}
+			{%endfor%}</div>
+    <div class="panel-body">{{item.resposta}}</div>
+  </div>
+{% endblock %}

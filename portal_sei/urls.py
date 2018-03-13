@@ -13,6 +13,7 @@ from capacitacoes.views import *
 from tastypie.api import Api
 from app_documentos.serializers import *
 from app_usuario.views import *
+from app_FAQ.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,11 +25,15 @@ urlpatterns = [
     url(r'^InsereDocumento',InsereDocumento),
     url(r'^InsereHelpDesk',InsereHelpDesk),
     url(r'^InsereNoticia',InsereNoticia),
+    url(r'^listaFAQ',listaFAQ),
+    url(r'^EditaFAQ',Edita_FAQ),
+    url(r'^itemFAQ/(?P<nr_item>\d+)/$',itemFAQ),
     url(r'^InsereCapacitacao', InsereCapacitacao),
     url(r'^EditarCapacitacao/(?P<nr_item>\d+)/$',editaCapacitacao),
     url(r'^DeletaCapacitacao/(?P<nr_item>\d+)/$',CapacitacaoDelete),
     url(r'^InsereCategoria',InsereCategoria),
     url(r'^InsereTag',InsereTag),
+    url(r'^InsereFAQ',Cria_FAQ),
     url(r'^lista_documentos', lista_documentos),
     url(r'^historico', historico),
     url(r'^lista_capacitacoes', lista_capacitacoes),

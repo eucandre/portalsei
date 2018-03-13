@@ -1,15 +1,15 @@
 {% extends 'apps/baseAPP.html' %}
 {% block noticias %}
-
-<button class="btn"><a href="/InsereCapacitacao/" style="text-decoration: none;"><i style="font-size:24px" class="fa" alt="Inserir novo documento">&#xf055;</i>Adicionar</a></button>
-
-<div class="col-lg-10 col-sm-10 col-md-10 col-xs-10" style="right: -5%;">
-	<h2 style="color: #b0ca63;">Lista de Capacitações</h2>
+<div class="col-md-12 col-sm-12"><a href="http://centraldeservicos.itec.al.gov.br">Solicitar Auxílio à Central de Serviços</a></div>
+<div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
 	<div class="col-md-10 col-sm-10 col-xs-10 center-block">
-	  <ul class="col-md-12 list-group">
+		<div class="alert alert-success">
+  		<strong>Lista</strong> com relação dos <small class="alert-link">FAQ no Portal Sei!</small>
+		</div>
+
+	  <ul class="col-md-12">
 	    {% for i in lista %}
-	        
-	    <li class="list-group-item"><a href="#" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a> <small>{{i.data_realizacao}}</small> <span class="badge"><a href="/EditarCapacitacao/{{ i.id }}/" style="color: white; text-decoration: none;"> Editar</a><a href="/DeletaCapacitacao/{{i.id}}" style="color: #b0ca63; text-decoration: none;"> Excluir</a></span></li>
+	        <li class="list-group-item"><a href="/itemFAQ/{{i.id}}" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a> <small>{{i.data_realizacao}}</small> <span class="badge"><a href="/EditaFAQ/{{ i.id }}/" style="color: white; text-decoration: none;"> Editar</a><a href="/EditaFAQ/{{i.id}}" style="color: #b0ca63; text-decoration: none;"> Excluir</a></span></li>
 	      {% empty %}
 	        <div class="row fontawesome-icon-list">
 	          <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/InsereCapacitacao/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>
@@ -17,9 +17,8 @@
 	    {% endfor %}
 	  </ul>
 	</div>
-</div>
-	    
-<div class="col-sm-4 center">
+
+	<div class="col-sm-12 center">
 	{% if lista.has_other_pages %}
 	  <ul class="pagination">
 	    {% if lista.has_previous %}
@@ -42,4 +41,7 @@
 	  </ul>
 	{% endif %}
 </div>
+</div>
+	    
+
 {% endblock %}

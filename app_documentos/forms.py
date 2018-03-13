@@ -33,7 +33,7 @@ class FormDocumentos(forms.ModelForm):
 	titulo = forms.CharField(max_length=300, widget=forms.TextInput(attrs={'class':'form-control'}))
 	tipo = forms.ModelChoiceField(queryset=Tipo_Documento.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
 	repositorio_documento = forms.FileField()
-	descricao = forms.CharField(max_length=500, widget=forms.TextInput(attrs={'class':'form-control'}))
+	descricao = forms.CharField(max_length=500, widget=forms.Textarea(attrs={'class':'form-control'}))
 	class Meta:
 		model = Documentos
 		fields = ('titulo','tipo','repositorio_documento','descricao')

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'froala_editor',
     'capacitacoes',
     'rest_framework',
-    
+    'app_FAQ',    
 ]
 
 REST_FRAMEWORK = {

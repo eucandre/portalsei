@@ -3,8 +3,24 @@
 	<h2 style="color: #b0ca63;">Documento</h2>
 	<form action="" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
-		<div class="col-md-8">
-			{{form.as_p}}
+		<div class="col-md-9 col-sm-9">
+			{{form.titulo.label_tag}}
+			{{form.titulo}}
+		</div>
+		<div class="col-md-4">
+			{{form.tipo.label_tag}}<a href="/InsereTipoDocumento/"><i style="font-size:24px" class="fa">&#xf055;</i></a>
+			{{form.tipo}}
+		</div>
+		<div class="col-md-8 col-sm-8">
+			{{form.repositorio_documento.label_tag}}
+			{{form.repositorio_documento}}
+		</div>
+		<div class="col-md-12">
+			{{form.descricao.label_tag}}
+			{{form.descricao}}
+			<br>
+		</div>
+			<br>
 		</div>
 		<br>
 		<div class="col-md-12">

@@ -1,17 +1,19 @@
 {% extends 'apps/baseAPP.html' %}
 {% block noticias %}
 
+<button class="btn"><a href="/InsereDocumento/" style="text-decoration: none;"><i style="font-size:24px" class="fa" alt="Inserir novo documento">&#xf055;</i>Adicionar</a></button>
+
 <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">
 	<div class="col-md-10 col-sm-10 col-xs-10 center-block">
 		<div class="alert alert-success">
   		<strong>Lista</strong> com relação dos <small class="alert-link">Documentos no portal</small>
 		</div>
-	  <ul class="col-md-6">
+	  <ul class="col-md-12">
 	    {% for i in lista %}
-	        <a href="#" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a><a href="/Editar/{{ i.id }}/"> Editar</a><a href="/Delete/{{i.id}}"> Excluir</a><br>
+	        <li class="list-group-item"><a href="#" style="font-weight: bold; text-decoration: none;">{{ i.titulo }}</a> <small>{{i.data_realizacao}}</small> <span class="badge"><a href="/EditarDocumento/{{ i.id }}/" style="color: white; text-decoration: none;"> Editar</a><a href="/Delete_Documento/{{i.id}}" style="color: #b0ca63; text-decoration: none;"> Excluir</a></span></li>
 	      {% empty %}
 	        <div class="row fontawesome-icon-list">
-	          <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/InsereDocumento/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>
+	          <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/InsereCapacitacao/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>
 	        </div>
 	    {% endfor %}
 	  </ul>

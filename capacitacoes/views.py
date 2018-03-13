@@ -20,9 +20,11 @@ def InsereCapacitacao(request):
 def editaCapacitacao(request, nr_item):
 	item = Evento.objects.get(pk =  nr_item)
 	if request.method == 'POST':
-		form = FormEventos(request.POST, request.FILES)
+		form = FormEventos(request.POST, request.FILES,instance=item)
 		if form.is_valid():
-			form.save()
+			item = form.save(commit=False)
+			item.user = request.user
+			item.save()
 	else:
 		form = FormEventos(instance=item)
 	return render(request, 'app_capacitacoes/insere_capacitacao.html',{'form':form})
