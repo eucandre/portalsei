@@ -88,3 +88,6 @@ class TagViewSet(viewsets.ModelViewSet):
 
 	queryset = Tag.objects.all().order_by('-tag_nome')
 	serializer_class = TagSerializer
+
+def AcessoAoSei(request):
+	return render(request, 'acesso_sei.html')

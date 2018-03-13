@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^InsereDocumento',InsereDocumento),
     url(r'^InsereHelpDesk',InsereHelpDesk),
     url(r'^InsereNoticia',InsereNoticia),
+    url(r'^InsereFAQ',Cria_FAQ),
     url(r'^listaFAQ',listaFAQ),
     url(r'^EditaFAQ',Edita_FAQ),
     url(r'^itemFAQ/(?P<nr_item>\d+)/$',itemFAQ),
@@ -33,7 +34,6 @@ urlpatterns = [
     url(r'^DeletaCapacitacao/(?P<nr_item>\d+)/$',CapacitacaoDelete),
     url(r'^InsereCategoria',InsereCategoria),
     url(r'^InsereTag',InsereTag),
-    url(r'^InsereFAQ',Cria_FAQ),
     url(r'^lista_documentos', lista_documentos),
     url(r'^historico', historico),
     url(r'^lista_capacitacoes', lista_capacitacoes),
@@ -45,9 +45,10 @@ urlpatterns = [
     url(r'^login/$', user_login),
     url(r'^EditaNoticia/(?P<nr_item>\d+)/$',EditaNoticia),
     
-    url(r'sobreOsei',sobreSei),
-    url(r'capacitacao',capacitacao),
-    url(r'equipe',equipe),
+    url(r'^AcessoAoSei',AcessoAoSei),
+    url(r'^sobreOsei',sobreSei),
+    url(r'^capacitacao',capacitacao),
+    url(r'^equipe',equipe),
     url(r'^froala_editor/', include('froala_editor.urls')),
     #api
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
