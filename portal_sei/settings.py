@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'capacitacoes',
     'rest_framework',
     'app_FAQ',    
+    'app_manuais',
+    'app_guia_implantacao',
 ]
 
 REST_FRAMEWORK = {

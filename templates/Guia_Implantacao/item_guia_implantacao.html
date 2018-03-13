@@ -1,0 +1,10 @@
+{% extends 'apps/baseAPP.html' %}
+{% block noticias %}
+	<h1>{{item.titulo}}</h1>
+	
+	<div class="panel panel-default">
+    <div class="panel-heading">{{item.video}}</div>
+    <div class="panel-heading">{{item.documento}}</div>
+    <div class="panel-body">{{item.conteudo}}</div>
+  </div>
+{% endblock %}

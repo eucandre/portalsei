@@ -1,0 +1,59 @@
+{% extends 'apps/baseAPP.html' %}
+{% block noticias %}
+	<h2 style="color: #b0ca63;">Insere guia de implementação</h2>
+	<form action="" method="post" enctype="multipart/form-data">
+		
+
+		{% csrf_token %}
+
+		{% if form.errors %}
+      <div class="alert alert-error">
+        <h4>Resolva essses problemas</h4>
+        <ul>
+          {% for field in form %}
+            {% if field.errors %}
+              {% for error in field.errors %}
+                <li><a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {% if form.non_field_errors %}
+          {{ form.non_field_errors }}
+        {% endif %}
+      </div>
+    {% endif %}
+
+
+		<div class="col-md-12">
+			<div class="col-md-10">
+				{{form.titulo.label_tag}}
+				{{form.titulo}}
+			</div>
+			<div class="col-md-4">
+				{{form.video.label_tag}}
+				{{form.video}}
+			</div>
+			<div class="col-md-4">
+				{{form.documento.label_tag}}
+				{{form.documento}}
+			</div>
+
+			<div class="col-md-12">
+				<br>
+				{{form.media}}
+				{{form.conteudo.label_tag}}
+				{{form.conteudo}}
+			</div>
+
+		</div>
+				
+		<br>
+		<div class="col-md-12">
+			<button type=submit class="btn btn-success">ENVIAR</button>
+			<button type=reset class="btn btn-danger">CANCELAR</button>
+		</div>	
+	</form>
+	<br>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'apps/baseAPP.html' %}
+{% block noticias %}
+	<h2 style="color: #b0ca63;">Manuias</h2>
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+
+		{% if form.errors %}
+      <div class="alert alert-error">
+        <h4>Resolva essses problemas</h4>
+        <ul>
+          {% for field in form %}
+            {% if field.errors %}
+              {% for error in field.errors %}
+                <li><a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {% if form.non_field_errors %}
+          {{ form.non_field_errors }}
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="col-md-12 col-sm-12">
+    	<div class="col-md-9 col-sm-9">
+    		{{form.titulo.label_tag}}
+    		{{form.titulo}}
+    	</div>
+    	<div class="col-md-3 col-sm-3">
+    		{{form.arquivo.label_tag}}
+    		{{form.arquivo}}
+    	<br>
+    	</div>
+
+    </div>
+  <button type=submit class = "btn btn-success">ENVIAR</button>  
+	</form>
+{% endblock %}

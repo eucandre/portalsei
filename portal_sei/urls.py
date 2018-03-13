@@ -14,6 +14,8 @@ from tastypie.api import Api
 from app_documentos.serializers import *
 from app_usuario.views import *
 from app_FAQ.views import *
+from app_manuais.views import *
+from app_guia_implantacao.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -45,6 +47,12 @@ urlpatterns = [
     url(r'^login/$', user_login),
     url(r'^EditaNoticia/(?P<nr_item>\d+)/$',EditaNoticia),
     
+    url(r'^CriaManual',cria_manual),
+    url(r'^listaManuais',lista_manuais),
+
+    url(r'^Cria_Tutorial',Cria_Tutorial),
+    url(r'^Lista_tutorial',Lista_tutorial),
+        url(r'^item_tutorial/(?P<nr_item>\d+)/$',item_tutorial),
     url(r'^AcessoAoSei',AcessoAoSei),
     url(r'^sobreOsei',sobreSei),
     url(r'^capacitacao',capacitacao),
