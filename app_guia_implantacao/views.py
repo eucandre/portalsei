@@ -30,7 +30,7 @@ def Lista_tutorial(request):
 		p_lista = paginator.page(1)
 	except EmptyPage:
 		p_lista = paginator.page(paginator.num_pages)
-	return render(request, 'Guia_implantacao/Guia_implantacao.html',{'lista':p_lista})
+	return render(request, 'Guia_Implantacao/Guia_implantacao.html',{'lista':p_lista})
 
 def item_tutorial(request, nr_item):
 	try:

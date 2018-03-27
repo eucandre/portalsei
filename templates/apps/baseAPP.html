@@ -1,331 +1,102 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <title>Portal SEI! - Governo do Estado de Alagoas</title>
-  <link rel="shortcut icon" href="/media/SEI-ALAGOAS.png" />
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script><script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="/media/css/site-base.css" media="all">
-  <link rel="stylesheet" type="text/css" href="/media/css/base.css" media="all">
-
-  <script src="https://cdn.rawgit.com/toopay/bootstrap-markdown/master/js/bootstrap-markdown.js"></script>
-  <script src="https://rawgit.com/lodev09/jquery-filedrop/master/jquery.filedrop.js"></script>
-  <script src="https://rawgit.com/jeresig/jquery.hotkeys/master/jquery.hotkeys.js"></script>
-
-	 <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-	 <link data-require="fontawesome@4.1.0" data-semver="4.1.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
-	 <link rel="stylesheet" href="https://cdn.rawgit.com/toopay/bootstrap-markdown/master/css/bootstrap-markdown.min.css" />
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" media="all" rel="stylesheet" />
-	<link href="{{STATIC_URL}}froala_editor/css/froala_editor.min.css" type="text/css" media="all" rel="stylesheet" />
-	<link href="{{STATIC_URL}}froala_editor/css/froala_style.min.css" type="text/css" media="all" rel="stylesheet" />
-	<script type="text/javascript" src="{{STATIC_URL}}froala_editor/js/froala_editor.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-	<style type="text/css">
-		/* Styles go here */
-
-		.md-editor.active {
-		  border-color: #66afe9;
-		  outline: 0;
-		  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
-		  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
-		}
-		.md-editor {
-		  display: block;
-		  border: 1px solid #ddd;
-		}
-		.md-editor>textarea {
-		  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-		  font-size: 13px;
-		  outline: 0;
-		  margin: 0;
-		  display: block;
-		  width: 100%;
-		  border: 0;
-		  padding: 10px;
-		  border-top: 1px dashed #ddd;
-		  border-bottom: 1px dashed #ddd;
-		  border-radius: 0;
-		  box-shadow: none;
-		  background: #eee;
-		}
-		.md-editor .md-footer,
-		.md-editor>.md-header {
-		  display: block;
-		  padding: 6px 4px;
-		  background: #f5f5f5;
-		  margin: 0;
-		}
-		.btn-input {
-		  overflow: hidden;
-		  position: relative;
-		  cursor: pointer;
-		}
-		.btn-input input[type="file"] {
-		  height: 30px;
-		  cursor: pointer;
-		  position: absolute;
-		  top: 0px;
-		  right: 0px;
-		  z-index: 2;
-		  opacity: 0.0;
-		  /* Standard: FF gt 1.5, Opera, Safari */
-		  filter: alpha(opacity=0);
-		  /* IE lt 8 */
-		  -ms-filter: "alpha(opacity=0)";
-		  /* IE 8 */
-		  -khtml-opacity: 0.0;
-		  /* Safari 1.x */
-		  -moz-opacity: 0.0;
-		  /* FF lt 1.5, Netscape */
-	}
-
-	</style>
-
-	<style>
-		.dropbtn {
-		    background-color: #4CAF50;
-		    color: white;
-		    padding: 16px;
-		    font-size: 16px;
-		    border: none;
-		}
-
-		.dropdown {
-		    position: relative;
-		    display: inline-block;
-		}
-
-		.dropdown-content {
-		    display: none;
-		    position: absolute;
-		    background-color: #f9f9f9;
-		    min-width: 160px;
-		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		    z-index: 1;
-		}
-
-		.dropdown-content a {
-		    color: black;
-		    padding: 12px 16px;
-		    text-decoration: none;
-		    display: block;
-		}
-
-		.dropdown-content a:hover {background-color: #f1f1f1}
-
-		.dropdown:hover .dropdown-content {
-		    display: block;
-		    width:  150%;
-		}
-
-		.dropdown:hover .dropbtn {
-		    background-color: #3e8e41;
-		    border: 1px;
-		}
-
-		hr { 
-		  border : 0;
-		  height: 1px; 
-		  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
-		}
-
-		.footer {
-		   position: fixed;
-		   left: 0;
-		   bottom: 0;
-		   width: 100%;
-		   background-color: #4572f1;
-		   color: white;
-		   text-align: center;
-		}
-
-	</style>
-
-	<style type="text/css">
-
-	     .container {
-	         width: 100%;
-	         height: 100%;
-	/*         background: #6C7A89;*/
-	         display: flex;
-	         /*flex-direction: row;*/
-	         justify-content: center;
-	         align-items: center
-	     }
-	     .box {
-	         width: 300px;
-	         height: 300px;
-	         /*background: #fff;*/
-	     }
-	    
-	 
-	.footer {
-	   /*position: static;*/
-	   left: 0;
-	   bottom: 0;
-	   width: 100%;
-	   height: 10%;
-	   background-color: #338bd0;
-	   color: white;
-	   text-align: center;
-	   opacity: 0.5;
-	   filter: Alpha(opacity=50); 
-		}
-		</style>
-		<script type="text/javascript">
-		function PegarTexto(f) {
-		f.elements.Mensagem.value = document.all.myEditor.html
-		+ "";
-		}
-		function Limpar() {
-		document.all.myEditor.html = "";
-		}
-
-	</script>
-	<script type="text/javascript">
-		$(window).scroll(function(){ // função para pegar o movimento do scroll (barra de rolagem)
-		    var top = $(window).scrollTop(); // aqui vc pega a posição da página
-		    if(top > 80){ // verifica a posição da página
-		        $("#menTop").stop().animate({ opacity: 0 }, 800); // aqui vc aplica o fade no menu  
-		    }else{ 
-		        $("#menTop").stop().animate({ opacity: 1.0 }, 800); // aqui vc tira o fade no menu
-		    }
-		});
-	</script>
-
-	<script type="text/javascript">
-		$(function() {
-	    $('div#id_nota').froalaEditor();
-	  });
-	</script>  
-	<!-- <script language="javascript" type="text/javascript" src="/tinymce/js/tinymce/tinymce.js"></script>  -->
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_style.min.css" rel="stylesheet" type="text/css" />
-	<style>
-		video {
-		    max-width: 100%;
-		    height: auto;
-		}
-	</style>
-
-
-	<script language="JavaScript">
-	function abrir(URL) {
-	 
-	  var width = 500;
-	  var height = 300;
-	 
-	  var left = 99;
-	  var top = 99;
-	 
-	  window.open(URL,'janela', 'width='+width+', height='+height+', top='+top+', left='+left+', scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=yes, resizable=yes, fullscreen=no');
-	 
-	}
-	</script>
-</head>
-<body>
-	<header>
-		<div id="topo">
-			<div id="topo-conteudo" class="row row-no-bottom">
-				<div id="envolve-logo" class="col-md-6 col-sm-3 col-lg-6">
-					<a id="logo" href="/">Agência Alagoas</a>
-				</div>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="utf-8">
+  
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default" >
+		  <div class="container-fluid" style="margin-bottom: 1%;">
+		    <div class="navbar-header" style="padding-left: 20%; ">
+		      <a class="navbar-brand" href="#"><img src="/media/imagens/logomarcaSEI.png" style="margin-left: -50%;"></a>
+		    </div>
+		    <ul class="nav navbar-nav" style="font: normal normal normal 13px/1.2em raleway,sans-serif;
+			    font-family: raleway,sans-serif;
+			    font-style: normal;
+			    font-weight: normal;
+			    font-size: 13px;
+			    line-height: 1.2em;
+			    font-size-adjust: none;
+			    font-stretch: normal;
+			    -x-system-font: none;
+			    font-feature-settings: normal;
+			    font-language-override: normal;
+			    font-kerning: auto;
+			    font-synthesis: weight style;
+			    font-variant-alternates: normal;
+			    font-variant-caps: normal;
+			    font-variant-east-asian: normal;
+			    font-variant-ligatures: normal;
+			    font-variant-numeric: normal;
+			    font-variant-position: normal; 
+			    margin-right: 30%; margin-top: 2%;">
+		      <li class="active"><a href="#">INÍCIO</a></li>
+		      <li><a href="#">AMBIENTE DE TREINAMENTO</a></li>
+		      <li><a href="http://seplag.al.gov.br/sei-alagoas">SOBRE O SEI</a></li>
+		      <li><a href="#">CONTATO</a></li>
+		    </ul>
+		  </div>
+		</nav>
+		<div class="col-md-12">
+			<img src="/media/imagens/LOGO2sei.png" style="width: 759px;height: 240px;object-fit: cover;margin-left: 15%; margin-top: 7%;">
+			<img src="/media/imagens_portal/traco-azul.png" style="width: 100%">
+		</div>
+		<div class="col-md-12 col-sm-12 col-lg-11" style="margin-left: 3%;">
+			<div class="col-md-2">
+				<img src="/media/imagens/acessoSei.png">
+			</div>
+			<div class="col-md-2">
+				<img src="/media/imagens/documentosSei.png">
+			</div>
+			<div class="col-md-2">
+				<img src="/media/imagens/apoioSei.png">
+			</div>
+			<div class="col-md-2">
+				<img src="/media/imagens/capacitacaoSei.png">
+			</div>
+			<div class="col-md-2">
+				<img src="/media/imagens/consultaSei.png">
+			</div>
+			<div class="col-md-2">
+				<img src="/media/imagens/perguntaSei.png">
 			</div>
 		</div>
-		{%if user.is_authenticated%}
-			<div class="alert alert-success">
-				<strong>{{user.username}}</strong> Você está logado.
+		<div class="row">
+			<div  style="margin-top: 20%; margin-left: 10%;">
+				<iframe width="360" height="215" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+			 </div>
+			<span style="margin-left: 35%;">+ Vídeos
+			</span>
+		</div>
+		<div class="row">
+			<nav class="navbar navbar-default" style="width: 42%; margin-top:-19%; margin-left: 50%; background-color: #3493E3" >
+				<h4 style="margin-left: 5%; margin-top: 3% ;color: white;">Notícias</h4>						
+			</nav>
+			<div style="z-index: 2;margin-left: 50%; max-width: 45%">
+				{% for i in noticias %}
+					<small>{{i.data_publicacao}}</small>
+					<h2>{{i.titulo}}</h2>
+						<p>{{i.nota | safe | slice:"0:100"}}</p>
+						<br />
+						<a href="#">Leia Mais</a>
+						<br />
+				{% endfor %}
 			</div>
-		{%endif%}
-	</header>
-	<div class="col-md-10 col-sm-9 col-lg-10 col-xl-7" >
-		<div class="row" style="width: 100%;">
-	    
-	    <div class="col-sm-3 col-md-3 col-lg-3 col-3 col-xl-3" style="right: -7%; top: -5px;">
-			  <form class="navbar-form" role="search">
-			    <div class="input-group add-on">
-			      <input class="form-control" placeholder="Buscar" name="srch-term" id="srch-term" type="text">
-			      <div class="input-group-btn">
-			        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-			      </div>
-			    </div>
-			  </form>
-	    </div> 
-
-	    <div class="col-sm-3 col-md-3" style="right: -5%;">
-	    	<div class="dropdown">
-	    		<button class="dropbtn btn" style="background-color: #b0ca63;height: 10px; width: 100%; padding-top: 10px;
-	  padding-bottom: 27px;position: relative;">O SEI ALAGOAS
-				  	<i class="fa fa-caret-down"></i>
-				  </button>
-				  <div class="dropdown-content" style="width: 250px; z-index: 5; opacity: 0.8;">
-				    <a href="/historico/" style="color: #3e8e41;">Histórico de Alagoas</a>
-				    <a href="/Lista_tutorial/" style="color: #3e8e41;">Guia de Implantação</a>
-				    <a href="#" style="color: #3e8e41;">Status de Implantação</a>
-				    <a href="#" style="color: #3e8e41;">Comitês e Unidades Setoriais</a>
-				    <a href="/listaFAQ" style="color: #3e8e41;">Atendimento (Helpdesk)</a>
-				    <a href="/capacitacao/" style="color: #3e8e41;">Capacitação</a>
-				    <a href="#" style="color: #3e8e41;">Legislação</a>
-				    <a href="#" style="color: #3e8e41;">Orientações</a>
-				    <a href="/lista_documentos/" style="color: #3e8e41;">Documentos do Projeto</a>
-				    <a href="#" style="color: #3e8e41;">Equipe</a>
-				  </div>
-	    	</div>
-	    </div>
-
-	    <div class="col-sm-3 col-md-3" style="right: -5%;">
-	    	<a href="http://hmlsip.sei.al.gov.br/sip/login.php?sigla_orgao_sistema=AL&sigla_sistema=SEI&infra_url=L3NlaS8="><button class="dropbtn btn" style="background-color: #d9534f;height: 37px; width: 115%; padding-top: 4%;
-	    padding-bottom: 9%; position: relative; margin-left: -30%;">AMBIENTE DE TREINAMENTO</button></a>
-	    </div>
-
-	    <div class="col-sm-3 col-md-3" style="right: -5%;">
-	    	<div class="dropdown">
-					  <button class="dropbtn btn" style="background-color: #338bd0;height: 10px; width: 158px; padding-top: 10px;
-	    padding-bottom: 27px; position: relative; margin-left: -30%;">SOBRE O SEI 
-					  	<i class="fa fa-caret-down"></i>
-					  </button>
-					  <div class="dropdown-content" style="width: 250px; opacity: 0.8;">
-					    <a href="/sobreOsei/" style="color: #3e8e41;">O que é o Sei?</a>
-					    <a href="/listaManuais/" style="color: #3e8e41;">Manuais</a>
-					  </div>
-					</div>
-	    </div>
-
+			<div style="margin-left: 10%;margin-top: -13%;">
+				<img src="/media/imagens/pesquisa_processual.png" "><a style="text-decoration: none; font-size: 24; color: rgb(83, 81, 81); margin-left: 2%;">Pesquisa Processual</a>
+			</div> 
+			<div style="margin-left: 10%;margin-top: 2%;">
+				<img src="/media/imagens/usuario_externo.png" ><a style="text-decoration: none; font-size: 24; color: rgb(83, 81, 81); margin-left: 2%;">Pesquisa Processual</a>
+			</div> 
 		</div>
-		<br><br>
-		<img src="/media/imagens_portal/traço-azul.png" style="width: 100%">
-		<div class="container-fluid ">
-	  
-	  <div class="row">
-	    <div class="col-sm-9 col-md-7 col-9 col-lg-9 col-xl-9 col-xs-7" style="z-index: 2;">{%block noticias%}{%endblock%}</div> 
-	  </div>
-		
+		<div class="row">
+			<nav class="navbar navbar-default" style="background-color: #3493E3" >
+				<h4 style="margin-left: 5%; margin-top: 3% ;color: white;"></h4>						
+			</nav>
 		</div>
-		<br>
-  </div> 
-	
-   <!-- Bootstrap core JavaScript -->
-   <script src="/media/vendor/jquery/jquery.min.js"></script>
-   <script src="/media/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>

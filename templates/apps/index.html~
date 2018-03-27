@@ -1,0 +1,108 @@
+{% extends 'apps/baseAPP.html' %}
+{% block noticias %}
+ <div class="container">
+   <div class="box">
+     <img  src="/media/imagens_portal/Sei_label.png">
+    </div>
+  </div>
+ </div>
+  <img src="/media/imagens_portal/traço-verde.png" style="width: 100%">
+    
+  <div class="col-md-12 col-lg-12 col-xs-10" >
+    <div style="margin-left: 200px; margin-right: auto;">
+      <a href="/AcessoAoSei/"><img  style="position: relative; width: 15rem;" src="/media/imagens/botão-acesso-ao-sei.png"></a>
+      <img  style="position: relative; width: 13rem;" src="/media/imagens/botão-material-de-apoio.png">
+      <a href="/lista_documentos/"><img  style="position: relative; width: 13rem;" src="/media/imagens/botão-documentos.png"></a>
+      <a href="/listaFAQ/"><img  style="position: relative; width: 13rem;" src="/media/imagens/botão-perguntas-frequentes.png"></a>
+      <img  style="position: relative; width: 14rem;" src="/media/imagens/botão-consulta-de-processos.png"> 
+      <a href="/lista_capacitacoes/"><img  style="position: relative; width: 12rem;" src="/media/imagens/botão-capacitações.png"> </a>
+    </div>
+  </div>  
+  <div class="col-md-6 col-xs-6 col-lg-12" style="background-color: #f7f7f7;">  
+    <div class="col-md-5 col-xs-5 col-lg-5" >
+      {% if vazio%}
+        <h2 class="title">VAZIO!</h2><small>Adicionar notícias<a href="http://127.0.0.1:8000/admin/app_documentos/noticias/add/"> Aqui</a></small>
+      {%else%}
+      <div class="container">
+         
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+
+          <div class="carousel-inner col-md-5 col-lg-5"  style="min-width: 100%; height: 300px; ">
+            <div class="item active ">
+              <a href="" style="font-weight: bold; font-size: 19px;">{{titulo1}}</a>
+              <img src="/media/{{imagem1}}" width="500" height="500" align="left">
+              
+            </div>
+
+            <div class="item ">
+              <a href="" style="font-weight: bold; font-size: 19px;">{{titulo2}}</a>
+              <img src="/media/{{imagem2}}" width="500" height="500" align="left">
+              
+            </div>
+
+            <div class="item">
+              <a href="" style="font-weight: bold; font-size: 19px;">{{titulo3}}</a>
+              <img src="/media/{{imagem3}}" width="500" height="500" align="left">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      {%endif%}
+    </div>
+    {% for i in noticias %}
+      <div class="col-md-5 col-lg-5">
+        <span style="background-color: #0A1B2A; color:#F4FA58; padding: inherit;"> {{i.categoria_da_noticia}}</span><span style="color:grey;"> {{i.data_publicacao}}</span><h2 ><a href="#" style="text-decoration: none;color:#0A1B2A;">{{i.titulo}}</a></h2>
+      </div>
+
+      {% empty %}
+      <h2 class="title">VAZIO!</h2><small>Adicionar notícias<a href="/InsereNoticia/"> Aqui</a></small>
+      
+    {% endfor %}  
+    <!-- <hr> -->
+    <a href="/lista_noticias/" style="right: 100px; font-weight: bold; color: #b0ca63; text-decoration: none; float: right;">Mais notícias</a>
+    </div>
+  </div>
+  <br>
+
+  <img src="/media/imagens_portal/traco-azul.png" style="width: 100%">
+  <div class="col-lg-12 col-md-12 col-sm-7">
+    <div class="container">
+      <button type="button" class="btn btn-success" style="background-color: #b0ca63;  width: 200px;margin-right: 1%;">Pesquisa Processual
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn-success" style="background-color: #b0ca63; width: 200px;"> Usuário Externo       
+        <i class="fa fa-users" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="container">
+      <button type="button" class="btn btn-success" style="background-color: #338bd0; margin-top: 1%;">Autenticidade de Documentos
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </button>
+    </div>  
+  </div>
+    
+    <div class="container">
+    <video width="1000" controls >
+        <source src="/media/{{video}}" type="video/mp4" style="float: center;">
+        <source src="mov_bbb.ogg" type="video/ogg">
+    </video>
+  </div>
+{% endblock %}

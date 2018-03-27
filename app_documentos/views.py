@@ -16,26 +16,25 @@ def Apresentacao(request):
 
 	if len(Noticias.objects.all()) == 1:	
 		obj_noticias = Noticias.objects.all()[(len(Noticias.objects.all())-1):]
-		img  = obj_noticias[0].values().get('imagem')
-
+		
+		img = Noticias.objects.get(pk = 1)	
 		if len(obj_noticias) > 0:
 			return render (request, 'apps/index.html',{"noticias":obj_noticias})
 			
 	if len(Noticias.objects.all()) > 1:
-		obj_noticias = Noticias.objects.all()[(len(Noticias.objects.all())-3):]
+		obj_noticias = Noticias.objects.all()[(len(Noticias.objects.all())-2):]
 		img1 = obj_noticias.values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('imagem')
 		titulo1 = obj_noticias.values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('titulo')
 
 		img2 = obj_noticias.values()[len(Noticias.objects.all())-(len(Noticias.objects.all())-1)].get('imagem')
 		titulo2 =obj_noticias.values()[len(Noticias.objects.all())-(len(Noticias.objects.all())-1)].get('titulo')
 
-		img3 = obj_noticias.values()[len(Noticias.objects.all())-(len(Noticias.objects.all())-2)].get('imagem')
-		titulo3 =obj_noticias.values()[len(Noticias.objects.all())-(len(Noticias.objects.all())-2)].get('titulo')
+		
 
 		video = obj_noticias.values()[len(Noticias.objects.all())-len(Noticias.objects.all())].get('video')
 		if len(obj_noticias) > 0:
-			return render (request, 'apps/index.html',{"noticias":obj_noticias, 'imagem1':img1,"titulo1":titulo1, 'imagem2':img2, 
-				"titulo2":titulo2, 'video':video, 'imagem3':img3, 'titulo3':titulo3 })
+			return render (request, 'apps/baseAPP.html',{"noticias":obj_noticias, 'imagem1':img1,"titulo1":titulo1, 'imagem2':img2, 
+				"titulo2":titulo2, 'video':video,  })
 	else:
 		tamanho = 0
 		# return render (request, 'gerais/index.html', {"vazio":tamanho})
